@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+
+<!-- <p></p> 
+paragraph tag -->
+
+<!-- <h#></h#> 
+heading tag; number adjusts size -->
+
+<!-- <img>scr=" " width="x" height="y" alt="alt"</img> 
+image tag; alt text is if the image cannot be loaded -->
+
+<!-- <a></a>
+hyper link tag; href attribute specifies target -->
+
+<!-- <hr>
+horizontal break tag; used to separate content or define a change-->
+
+<!-- <table> <tr>...</tr> <th></th> <th>...</tr> </table>
+table tags; <tr></tr> creates new row, <th></th> creates contents for row -->
+
+<!-- <ul> <li></li>  </ul> ; <ol> <li></li> </ol> ; <dl> <dt><dd></dd><dt> </dl>
+unordered list tag; ordered list tag; description list tag -->
+
+<!--Block level elements start on a new line and take the full width avaiable, ex: <div></div>-->
+<!--Inline level elements do not start on a new line and only take as much space as necessary, ex: <a></a>,<br></br>,...-->
+
+<!-- <div></div> 
+the content divions element; is the generic container for flow content -->
+
+<!-- We can define a "class" in the CSS file to apply to all <div="className"> containers 
+"The HTML class attribute is used to define equal styles for elements with the same class name."
+think classes = local style 
+different tags can share the same class-->
+
+<!--We can define "id"'s which are essentially unique classes. i.e. a html element can only have
+    one unique id that belongs to that single element, while a class can be used by multiple elements --> 
+
+
+<html lang="en">
+<head>
+ 
+	<title>My test page</title>
+	<link rel="stylesheet" href="resources/css/styles.css">
+
+    <style type="text/css"> 
+        span.warning{
+            font-size:120%;
+            color:red;
+        }
+    </style>
+ 
+</head>
+  
+<body>
+<script>
+
+function changeStyle(){
+     document.getElementById("mainHeader").style.fontSize = "25px"; 
+     document.getElementById("mainHeader").style.color = "red";
+     document.getElementById("mainHeader").style.backgroundColor = "yellow"; 
+}
+function revertStyle(){
+    document.getElementById("mainHeader").style.fontSize = "32px"; 
+    document.getElementById("mainHeader").style.color = "gold";
+    document.getElementById("mainHeader").style.backgroundImage = "url('resources/css/stars.gif')";
+}
+function killDragon(){
+    document.getElementById("dragon1").src='resources/css/bomb.gif';
+}
+function light(sw){
+    var pic;
+        if(sw==0){
+            pic ="resources/css/pic_bulboff.gif"
+        }else{
+            pic ="resources/css/pic_bulbon.gif"
+        }
+        document.getElementById('lightbulb').src=pic;
+}
+</script>
+
+
+
+    <h1 id="mainHeader">Notevault</h1>
+    <button type="button" onclick="changeStyle()">Click to change title Style</button>
+    <button type="button" onclick="revertStyle()">Click to revert title Style</button>
+    <hr><!---------------SECTION--------------->
+
+    <p>Watch out for the dragon!</p>
+    <img id="dragon1" src="resources/css/giphy.gif" width="" height ="" alt="grrrr">
+    <a href="html/test_page1.html"> Click here to escape!</a>
+    <button type="button" onclick="killDragon()">Click to defeat the dragon!</button>
+    <hr><!---------------SECTION--------------->
+
+    <p><b>This</b> <del>is</del> <i>a</i> <br> <em>line</em> <sup>break</sup> </p>
+    <p style="color:lightblue;font-family:courier;text-align:center;"><q><i>O human race born to fly upward, wherefore at a little wind dost thou fall.</i></q></q>
+    <p><bdo dir="rtl">This text will be wrttien from right to left</bdo></p>
+    <hr><!---------------SECTION--------------->
+
+    <div>
+    <table class="genericTable">
+        <tr>
+            <th>DEC</th>
+            <th>BIN</th>
+            <th>HEX</th>
+        </tr>
+        <tr>
+            <th>10</th>
+            <th>00001001</th>
+            <th>A</th>
+        </tr>
+        <tr>
+            <th>11</th>
+            <th>00001011</th>
+            <th>B</th>
+        </tr>
+        <tr>
+            <th>12</th>
+            <th>00001100</th>
+            <th>C</th>
+        </tr>
+    </table>
+    <ul>
+        <li>element 1</li>
+        <li>element 2</li>
+    </ul>
+    <ol>
+        <li>element 1</li>
+        <li>element 2</li>
+    </ol>
+    <dl>
+        <dt>Runescape</dt>
+            <dd>-My first MMORPG</dd>
+        <dt>EVE</dt>
+            <dd>-My second MMORPG</dd>
+        <dt>World of Warcraft</dt>
+            <dd>-My third MMORPG</dd>
+        <dt>Everquest Project 1999</dt>
+            <dd>My fourth MMORPG</dd>
+    </dl>
+    </div>
+    <hr>
+
+    <div class="blackhole">
+        <p>Here be a black hole. Do <span class="warning">NOT</span> enter!</p>
+    </div>
+    <hr>
+    <a href="#mainHeader">take me to the top!</a>
+    <hr>
+    <p>Iframe:</p>
+    <iframe src="html/test_page1.html" height="200" width="200"></iframe>
+    <iframe src="html/test_page1.html" style="border:none" height="200" width="200"></iframe>
+    <hr>
+    <img id="lightbulb" src="resources/css/pic_bulboff.gif" width="100" height="180">
+    <p>
+        <button type="button" onclick="light(1)">Light On</button>
+        <button type="button" onclick="light(0)">Light Off</button>
+    </p>
+    <hr>
+
+
+</body>
+	
+</html>
+	

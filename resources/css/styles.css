@@ -1,0 +1,68 @@
+#nav {
+    float:left;
+    width:160px;
+    border-color: #57545f;
+    border-style: groove;
+    position:fixed; 
+    top:0px; 
+    bottom:0px; 
+}
+
+#main {
+    margin-left: 165px;
+    height:100%;
+}
+#main iframe{
+    width:100%;
+    height:100%;
+    position:fixed; 
+}
+
+
+body {
+
+	color: white; 
+	background-image: url("stars.gif");
+}
+
+/* unvisited link */
+a:link {
+  color: hotpink;
+}
+/* visited link */
+a:visited {
+  color: #ffcc00;
+}
+/* mouse over link */
+a:hover {
+  color: white;
+}
+
+
+table,th,td.genericTable{
+		border: 1px solid white;
+		padding: 15px;
+		border-collapse: collapse;
+}
+
+dt{
+	font-weight: bold;
+	color: lightyellow;
+}
+dd{
+	color: lightgreen;
+}
+
+.blackhole{
+	background-color:black;
+	color:white;
+	padding:20px;
+	text-align:center;
+}
+
+#mainHeader{
+	color:gold;
+	padding:40px;
+	text-align:center;
+}
+
