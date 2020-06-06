@@ -67,15 +67,27 @@ function revertStyle(){
 function killDragon(){
     document.getElementById("dragon1").src='resources/css/bomb.gif';
 }
+var count =0;
 function light(sw){
     var pic;
         if(sw==0){
             pic ="resources/css/pic_bulboff.gif"
-        }else{
-            pic ="resources/css/pic_bulbon.gif"
+            count += 1;
+            document.getElementById("counter").innerHTML = "Click 50 times for a surprise: " + count;
         }
+        else{
+            pic ="resources/css/pic_bulbon.gif"
+            count += 1;
+            document.getElementById("counter").innerHTML = "Click 50 times for a surprise: " + count;
+        }
+        if(count>=50){
+            pic = "resources/css/bomb.gif";
+        }
+        
         document.getElementById('lightbulb').src=pic;
-}
+    }
+
+
 </script>
 
 
@@ -152,8 +164,9 @@ function light(sw){
     <hr>
     <img id="lightbulb" src="resources/css/pic_bulboff.gif" width="100" height="180">
     <p>
-        <button type="button" onclick="light(1)">Light On</button>
-        <button type="button" onclick="light(0)">Light Off</button>
+        <button id = "lightbulbONE" type="button" onclick="light(1)">Light On</button>
+        <button id = "lightbulbTWO" type="button" onclick="light(0)">Light Off</button>
+        <p id="counter">Click 50 times for a surprise: 0</p>
     </p>
     <hr>
 
