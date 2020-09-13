@@ -1,28 +1,67 @@
 <!DOCTYPE html>
 
-
 <html lang="en">
 <head>
- 
-	<title>My test page</title>
-	<link rel="stylesheet" href="resources/css/styles.css">
+    <title>Home</title>
+    <link rel="stylesheet" href="resources/css/styles.css">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
- 
+
 </head>
   
 <body>
 
-<div id="nav">
-    <h3>Site Navigation</h3>
+    <div class="musicPlayerParent">
+        <h1 class="mainHeader">Tiamtum.github.io</h1>
+    </div>
     
-        <a href=html/test_page1.html>test_page1</a> 
-        <br>
-        <a href=html/ideas.html>Ideas</a> 
+    <div id="dragon1" style="height:30%" >
+        <img id="dragon1" src="resources/css/dragon1.gif" alt="grrrr">
+    </div>
+    <div id="dragon2" style="height:30%">
+        <img id="dragon2" src="resources/css/dragon2.gif" alt="grrrr">
+    </div>
+
+    <!---Updates-->
+    <div class="musicPlayerParent">
+        <marquee style="font-size:larger" scrollamount = "3" direction = "left" id="banner1">Updates:
+        <img src="resources/css/new.gif"> Website layout has been overhauled;
+        <img src="resources/css/new.gif"> C/C++, Python, and JavaScript pages created;
+        <img src="resources/css/new.gif"> Websites added to site recomendations!
+        </marquee> 
+    </div>
+ 
+    <div class="musicPlayerParent">
+        <audio controls alt="EQ p1999 - The Academy of Arcane Science Ambiance" id="musicPlayer" style="height:20px">
+            <source src = "resources/audio/Ambiance.mp3" type ="audio/mp3">
+            Your browser does not support the audio element.
+        </audio>
+    </div>
+   
+    <div class="orbParent">
+        <img src="resources/css/orb.gif" id="orb">
+    </div>
+
+    <!---Quotes-->
+    <div class="musicPlayerParent">
+        <marquee style="font-size:larger" scrollamount = "3" direction = "left" id="banner2"> Quotes:
+        <q><i>O human race born to fly upward, wherefore at a little wind dost thou fall.</i></q> - Dante Alighieri;
+        <q><i>The object of education is to teach us to love what is beautiful.</i></q> - Plato;
+        <q><i>Better to be the poor servant of a poor master, and to endure anything, rather than think as they do and live after their manner</i></q> - Homer;
+        <q><i>He for himself weaves woe who weaves for others woe, and evil counsel recoils on the counsellor.</i></q> - Hesiod;
+        <q><i>Be ever engaged, so that whenever the devil calls he may find you occupied.</i></q> - St. Jerome;
+        <q><i>Music is a moral law. It gives soul to the universe, wings to the mind, flight to the imagination, and charm and gaiety to life and to everything.</i></q> - Plato;
+        </marquee> 
+    </div>
+ 
+
+
     
-</div>
-<div id="main">      
-<iframe src="frame.html" frameborder="0" name="product_iframe" id="main_iframe"></iframe>
-</div>     
+    <iframe src="html/site_contents.html" id=navigation_iframe  > </iframe>
+    <iframe src="html/introduction.html" id=introduction_iframe > </iframe>
+    <iframe src="html/site_recommendations.html" id=recommendations_iframe> </iframe>
+
 
 
 </body>

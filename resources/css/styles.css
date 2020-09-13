@@ -1,26 +1,102 @@
-#nav {
-    text-align:center;
-    width:160px;
-    border-color: #57545f;
-    border-style: groove;
-    position:fixed; 
-    top:0px; 
-    bottom:0px; 
+#navigation_iframe{
+  text-align:left;
+  border-style: groove;
+  width: 390px;
+  height:775px;
+  position:fixed;
+  overflow:hidden;
+  top:160px; 
+  bottom:0px;
+}
+#introduction_iframe{
+  text-align:left;
+  border-style: groove;
+  width: 1115px;
+  height:775px;
+  position: fixed;
+  top:160px; 
+  bottom:0px;
+  left:400px;
+  overflow:hidden;
+}
+#recommendations_iframe{
+  text-align:left;
+  border-style: groove;
+  width: 390px;
+  height:775px; /*height 100%*/
+  position:fixed;
+  top:160px; 
+  bottom:0px;
+  left:1515px;
+  overflow:hidden;
+
 }
 
-#main {
-    margin-left: 165px;
-    height:100%;
+#dragon1{
+  float:left;
+  width:90px; /*22.3*/
+  position:absolute;
+  top:15px;
+  left:15px;
+  z-index: 1;
 }
-#main iframe{
-    width:100%;
-    height:100%;
-    position:fixed; 
+#banner1{
+
+  width:575px; /*21%*/
+  height:12px;
+  position: absolute;
+  top:115px;
+  left:150px;
+  z-index: 1;
+  color:cyan;
+}
+#dragon2{
+  float:right;
+  width:90px; /*22.3*/
+  position:absolute;
+  top:15px; /*15*/
+  left:900px;
+  z-index: 1;
+}
+#banner2{
+
+  width:575px; /*21%*/
+  height:12px;
+  position: absolute;
+  top:129px;
+  right:150px;
+  z-index: 1;
+  color:cyan;
 }
 
+.musicPlayerParent{
+  width: 1915px; 
+  height: 300px;
+  left:0px; /*left:824px;*/
+  z-index: -1;
+  position:fixed;
+}
+
+#musicPlayer{
+  position: absolute;
+  left:827px;
+  top: 125px;
+}
+
+.orbParent{
+  width: 1915px;
+  height: 65px;
+  top:17px;
+  z-index: -1;
+  position: fixed;
+}
+
+#orb{
+  position: absolute;
+  left:754px;
+}
 
 body {
-
 	color: white; 
 	background-image: url("stars.gif");
 }
@@ -45,24 +121,9 @@ table,th,td.genericTable{
 		border-collapse: collapse;
 }
 
-dt{
-	font-weight: bold;
-	color: lightyellow;
-}
-dd{
-	color: lightgreen;
-}
-
-.blackhole{
-	background-color:black;
-	color:white;
-	padding:20px;
-	text-align:center;
-}
-
-#mainHeader{
+.mainHeader{
 	color:gold;
-	padding:40px;
+  padding:40px;
 	text-align:center;
 }
 
