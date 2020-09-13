@@ -81,6 +81,7 @@
   position: absolute;
   left:827px;
   top: 125px;
+  z-index: 1;
 }
 
 .orbParent{
