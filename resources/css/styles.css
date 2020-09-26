@@ -55,3 +55,8 @@ dd{
   color:antiquewhite;
   font-size: x-large
 }
+
+audio {
+  width: 200px;
+  height: 25px;
+}
