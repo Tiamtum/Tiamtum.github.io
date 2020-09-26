@@ -1,130 +1,57 @@
-#navigation_iframe{
-  text-align:left;
-  border-style: groove;
-  width: 390px;
-  height:775px;
-  position:fixed;
-  overflow:hidden;
-  top:160px; 
-  bottom:0px;
-}
-#introduction_iframe{
-  text-align:left;
-  border-style: groove;
-  width: 1115px;
-  height:775px;
-  position: fixed;
-  top:160px; 
-  bottom:0px;
-  left:400px;
-  overflow:hidden;
-}
-#recommendations_iframe{
-  text-align:left;
-  border-style: groove;
-  width: 390px;
-  height:775px; /*height 100%*/
-  position:fixed;
-  top:160px; 
-  bottom:0px;
-  left:1515px;
-  overflow:hidden;
+@font-face {
+  font-family:"RS";
+  src:url("fonts/runescape_chat_font.eot?") format("eot"),
+  url("fonts/runescape_chat_font.woff") format("woff"),
+  url("fonts/runescape_chat_font.ttf") format("truetype"),
+  url("fonts/runescape_chat_font.svg#Runescape-Chat-Font") format("svg");
+  font-weight:normal;font-style:normal;}
 
-}
 
-#dragon1{
-  float:left;
-  width:90px; /*22.3*/
-  position:absolute;
-  top:15px;
-  left:15px;
-  z-index: 1;
-}
-#banner1{
+/* Headers */
+  h1{
+    font-family: "RS";
+    color:gold;
+  }
+  h2{
+    font-family: "RS";
+    color:gold;
+  }
+  h3{
+    font-family: "RS";
+    color:gold;
+  }
+/* Paragraphs */
+  p{
+    font-family: "RS";
+    color:antiquewhite;
+    font-size:x-large
+  }
 
-  width:575px; /*21%*/
-  height:12px;
-  position: absolute;
-  top:115px;
-  left:150px;
-  z-index: 1;
-  color:cyan;
-}
-#dragon2{
-  float:right;
-  width:90px; /*22.3*/
-  position:absolute;
-  top:15px; /*15*/
-  left:900px;
-  z-index: 1;
-}
-#banner2{
+/* Links */
 
-  width:575px; /*21%*/
-  height:12px;
-  position: absolute;
-  top:129px;
-  right:150px;
-  z-index: 1;
-  color:cyan;
-}
-
-.musicPlayerParent{
-  width: 1915px; 
-  height: 300px;
-  left:0px; /*left:824px;*/
-  z-index: -1;
-  position:fixed;
-}
-
-#musicPlayer{
-  position: absolute;
-  left:827px;
-  top: 125px;
-  z-index: 1;
-}
-
-.orbParent{
-  width: 1915px;
-  height: 65px;
-  top:17px;
-  z-index: -1;
-  position: fixed;
-}
-
-#orb{
-  position: absolute;
-  left:754px;
-}
-
-body {
-	color: white; 
-	background-image: url("stars.gif");
-}
-
-/* unvisited link */
 a:link {
   color: hotpink;
+  font-size:x-large
 }
-/* visited link */
-a:visited {
+a:visited{
   color: #ffcc00;
+  font-size:x-large
 }
-/* mouse over link */
 a:hover {
   color: white;
+  font-size:x-large
 }
 
+/*Ordered Lists*/
+ol{
+  font-family: "RS";
+  color:antiquewhite;
+  font-size:x-large
+  }
 
-table,th,td.genericTable{
-		border: 1px solid white;
-		padding: 15px;
-		border-collapse: collapse;
+/*Dictionary Lists Entries*/
+dd{
+  font-family:"RS";
+  color:antiquewhite;
+  font-size: x-large
 }
-
-.mainHeader{
-	color:gold;
-  padding:40px;
-	text-align:center;
-}
-
