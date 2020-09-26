@@ -56,7 +56,31 @@ dd{
   font-size: x-large
 }
 
+/*Audio Element*/
 audio {
   width: 200px;
   height: 25px;
+}
+
+/*Marquee*/
+
+.marquee {
+  width: 600px;
+  height: 50px;
+  /*padding-bottom: 10px;*/
+  color: antiquewhite;
+  white-space: nowrap;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+.marquee p {
+  display: inline-block;
+  font-family: "RS";
+  color:cyan;
+  padding-left: 100%;
+  animation: marquee 90s linear infinite;
+}
+@keyframes marquee {
+  0%   { transform: translate(0, 0); }
+  100% { transform: translate(-100%, 0); }
 }
