@@ -56,6 +56,20 @@ dd{
   font-size: x-large
 }
 
+/*Tables*/
+
+#tables{
+  border: 1px solid goldenrod;
+  font-family: "RS";
+  color: antiquewhite;
+  font-size: x-large;
+  width: 100%;
+  text-align:center;
+}
+#rowcol{
+  border: 1px solid goldenrod;
+}
+
 /*Audio Element*/
 audio {
   width: 200px;
