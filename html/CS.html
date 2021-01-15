@@ -31,11 +31,92 @@
       color:black;
     }
   </style>
+
+<script>
+
+  function convertNumber(){
+    
+    if(document.getElementById("b1").checked){
+      if(document.getElementById("d2").checked){
+        var x = parseInt(document.getElementById('userNum').value,2)
+        var y = x.toString(10)
+        document.getElementById("convertedUserNum").value = y 
+      }
+      if(document.getElementById("h2").checked){
+        var x = parseInt(document.getElementById('userNum').value,2)
+        var y = x.toString(16)
+        document.getElementById("convertedUserNum").value = y 
+      }
+      if(document.getElementById("o2").checked){
+        var x = parseInt(document.getElementById('userNum').value,2)
+        var y = x.toString(8)
+        document.getElementById("convertedUserNum").value = y 
+      }
+    }	
+    
+    if(document.getElementById("d1").checked){
+      if(document.getElementById("b2").checked){
+        var x = parseInt(document.getElementById('userNum').value,10)
+        var y = x.toString(2)
+        document.getElementById("convertedUserNum").value = y 
+      }
+      if(document.getElementById("h2").checked){
+        var x = parseInt(document.getElementById('userNum').value,10)
+        var y = x.toString(16)
+        document.getElementById("convertedUserNum").value = y 
+      }
+      if(document.getElementById("o2").checked){
+        var x = parseInt(document.getElementById('userNum').value,10)
+        var y = x.toString(8)
+        document.getElementById("convertedUserNum").value = y 
+      }		
+    }
+    
+    if(document.getElementById("h1").checked){
+      if(document.getElementById("b2").checked){
+        var x = parseInt(document.getElementById('userNum').value,16)
+        var y = x.toString(2)
+        document.getElementById("convertedUserNum").value = y 
+      }
+      if(document.getElementById("d2").checked){
+        var x = parseInt(document.getElementById('userNum').value,16)
+        var y = x.toString(10)
+        document.getElementById("convertedUserNum").value = y 
+      }
+      if(document.getElementById("o2").checked){
+        var x = parseInt(document.getElementById('userNum').value,16)
+        var y = x.toString(8)
+        document.getElementById("convertedUserNum").value = y 
+      }
+    }
+    
+    if(document.getElementById("o1").checked){
+      if(document.getElementById("b2").checked){
+        var x = parseInt(document.getElementById('userNum').value,8)
+        var y = x.toString(2)
+        document.getElementById("convertedUserNum").value = y 
+      }
+      if(document.getElementById("d2").checked){
+        var x = parseInt(document.getElementById('userNum').value,8)
+        var y = x.toString(10)
+        document.getElementById("convertedUserNum").value = y 
+      }
+      if(document.getElementById("h2").checked){
+        var x = parseInt(document.getElementById('userNum').value,8)
+        var y = x.toString(16)
+        document.getElementById("convertedUserNum").value = y 
+      }		
+    }
+    
+  }
+  
+  </script>
+
 </head>
   
 <body background="../resources/css/stars.gif">
 
-<div >
+<!-- <div >
     <h1 style="text-align: center">DEC-BIN-HEX Conversions</h1>
     <center>
     <table id="tables">
@@ -127,7 +208,7 @@
         <tr>
                                                                                                                                                                                                                                                                                                                                                                     
       </table>
-    </center>
+    </center> -->
 
 <h2>BIN to HEX</h2>
 <p>Group the binary number into groups of four digits and match them with the corresponding hexadecimal value. For example:<br>
@@ -143,10 +224,56 @@ For example:<br>
 <img src="../resources/latex/bintodec.gif"> <br>
 <img src="../resources/latex/hextodec.gif"> <br>
 
+</p><br>
 
-</p>
+<h2>Conversion Tool</h2>
+<p>Select the base of your number in the top row and the base you want to convert it to in the bottom row.</p>
+<center>
+<form>
+  <label for="userNum" style="color:antiquewhite;">Enter Number:</label><br>
+  <input type="text" id="userNum" name="userNum"><br>
+	<table>
+	<form action="">
+	  <td>
+	  <input type="radio" name="number" value="bin" id="b1"> BIN<br>
+	  </td>
+	  <td>
+	  <input type="radio" name="number" value="dec" id="d1"> DEC<br>
+	  </td>	  
+	  <td>
+	  <input type="radio" name="number" value="hex" id="h1"> HEX<br>
+	  </td>
+	  <td>
+	  <input type="radio" name="number" value="oct" id="o1"> OCT<br>
+	  </td>
+	</form>
+	</table>
 
+	<table>
+	<form action="">
+	  <td>
+	  <input type="radio" name="number" value="bin" id="b2"> BIN<br>
+	  </td>
+	  <td>
+	  <input type="radio" name="number" value="dec" id="d2"> DEC<br>
+	  </td>
+	  <td>
+	  <input type="radio" name="number" value="hex" id="h2"> HEX<br>
+	  </td>
+	  <td>
+	  <input type="radio" name="number" value="oct" id="o2"> OCT<br>
+	  </td>	  
+	</form>
+	</table>
 
+  <button name="convert" type="button" onclick="convertNumber()"> Convert </button> </br>
+  
+  
+  <input type="text" id="convertedUserNum" name="convertedUserNum">
+</form> 
+</center> 
+
+<h2>Signed, Unsigned, One's/Two's Complement Binary Numbers</h2>
     
 </div>
 
