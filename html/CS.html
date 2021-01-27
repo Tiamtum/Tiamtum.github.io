@@ -292,13 +292,15 @@ The number of boolean functions in N-variables is 2^(2^N).</p>
 are ORed together to form the expression. Each product term must contain all the variables, either in their true or complementary form. Any Boolean function can be described using a SOP expression.<br>
 
 The product term in a SOP expression is called an implicant, because it implies the expression is true 
-when the product term is true. Each product term with all the variables is also called a minterm.<br>
+when the product term is true. Each product term with all the variables is also called a minterm.
 A literal is a variable that is in its true form or its complementary form. <br>
+To form the SOP, simply AND the variables together that yield true output and OR all these expressions together.<br>
 
 Product of sums (POS) is a Boolean expression composed of ANDed (product) a collection of OR terms (sum).
 The duality of Boolean algebra is shown in the comparison of SOP and POS expressions.<br>
 In POS, each sum term identifies a zero of the truth table. <br>
-A maxterm contains all the variables in true or complementary form all ORed together. Each maxterm corresponds to a row in the truth table. 
+A maxterm contains all the variables in true or complementary form all ORed together. Each maxterm corresponds to a row in the truth table. <br>
+To form the POS, simply OR the variables together that yield false output and AND all these expressions together.
 
 </p>
 
