@@ -30,6 +30,12 @@
       background-color:yellow;
       color:black;
     }
+    b{
+      color:#DF9DA9 ;
+    }
+    i{
+      color:#DF9DA9 ;
+    }
   </style>
 
 <script>
@@ -116,99 +122,31 @@
   
 <body background="../resources/css/stars.gif">
 
-<!-- <div >
-    <h1 style="text-align: center">DEC-BIN-HEX Conversions</h1>
-    <center>
-    <table id="tables">
-        <tr id="rowcol">
-        <th >DEC</th>
-        <th >HEX</th> 
-        <th >BIN</th>
-        </tr>
-        <tr>
-        <td>0</td>
-        <td>0</td>
-        <td>00000000</td>
-        </tr>
-        <tr>
-        <td>1 </td>
-        <td>1</td>
-        <td>00000001</td>
-        </tr>
-        <tr>
-        <td>2 </td>
-        <td>2</td>
-        <td>00000010</td>
-        </tr>
-        <tr>
-        <td>3 </td>
-        <td>3</td>
-        <td>00000011</td>
-        </tr>
-        <tr>
-        <td>4 </td>
-        <td>4</td>
-        <td>00000100 </td>
-        </tr>
-        <tr>
-        <td>5 </td>
-        <td>5</td>
-        <td>00000101 </td>
-        </tr>
-        <tr>
-        <td>6 </td>
-        <td>6</td>
-        <td>00000110 </td>
-        </tr>
-        <tr>
-        <td>7 </td>
-        <td>7</td>
-        <td>00000111</td>
-        </tr>
-        <tr>
-        <td>8 </td>
-        <td>8</td>
-        <td>00001000</td>
-        </tr>
-        <tr>
-        <td>9 </td>
-        <td>9</td>
-        <td>00001001</td>
-        </tr>
-        <tr>
-        <td>10 </td>
-        <td>A</td>
-        <td>00001010</td>
-        </tr>
-        <tr>
-        <td>11 </td>
-        <td>B</td>
-        <td>00001011</td>
-        </tr>
-        <tr>
-        <td>12 </td>
-        <td>C</td>
-        <td>00001100</td>
-        </tr>
-        <tr>
-        <td>13 </td>
-        <td>D</td>
-        <td>00001101</td>
-        </tr>
-        <tr>
-        <td>14 </td>
-        <td>E</td>
-        <td>00001110</td>
-        </tr>
-        <tr>
-        <td>15 </td>
-        <td>F</td>
-        <td>00001111</td>
-        </tr>
-        <tr>
-                                                                                                                                                                                                                                                                                                                                                                    
-      </table>
-    </center> -->
+<h1>Table of Contents</h1>
+
+<div>
+  <ul>
+      <li><a href="#s1">1. Computers and Number Systems </a>
+      <ul>
+        <li><a href="#ss1_1">1.1 Conversions </a></li>
+        <li><a href="#ss1_2">1.2 Signed, Unsigned, One's/Two's Complement Binary Numbers </a></li>
+      </ul>
+      </li> 
+      <li><a href="#s2">2. Circuits</a>
+      <ul>
+        <li><a href="#ss2_1">2.1 Boolean Algebra and Truth Tables </a></li>
+        <li><a href="#ss2_2">2.2 Transistors and Logic Gates </a></li>
+        <li><a href="#ss2_3">2.3 Sum of Products and Product of Sums </a></li>
+        <li><a href="#ss2_4">2.4 Karnaugh Maps </a></li>
+
+      </ul>
+  </ul>
+</div> 
+
+
+<h1 id="s1">1. Computers and Number Systems</h1>
+
+<h2 id="ss1_1">1.1 Conversions</h2>
 
 <h2>BIN to HEX</h2>
 <p>Group the binary number into groups of four digits and match them with the corresponding hexadecimal value. For example:<br>
@@ -273,213 +211,437 @@ For example:<br>
 </form> 
 </center> 
 
-<h2>Signed, Unsigned, One's/Two's Complement Binary Numbers</h2>
+<h2 id="ss1_2">1.2 Signed, Unsigned, One's/Two's Complement Binary Numbers</h1>
     
 
+<!---->
+<p><a href="#top">Back to top</a></p>
+<!---->
 
-<h2>Boolean Algebra</h2>
+
+<h1 id="s2">2. Circuits</h1>
+
+<h2 id="ss2_1">2.1 Boolean Algebra and Truth Tables</h2>
+
+<h3><b><i>Note: </i></b> For the purposes of this page,
+  <b>~</b> or <b>'</b> will represent NOT, <b>&</b> or variables next to each other will represent AND, 
+  and <b>|</b> or <b>+</b> will represent OR.</h3>
+
+  <p>A <b>truth table</b> consists of true/false values for Boolean variables. One row per each possible
+    combination of arguments. Each row gives the unique function value for specified arguements.
+    For N inputs there are 2^N rows.<br>
+    The number of boolean functions in N-variables is 2^(2^N).</p>
 
 
-<h1>Truth Tables</h1>
-<p>A truth table consists of true/false values for Boolean variables. One row per each possible
-combination of arguments. Each row gives the unique function value for specified arguements.
-For N inputs there are 2^N rows.<br>
-The number of boolean functions in N-variables is 2^(2^N).</p>
+<h2 id="ss2_2">2.2 Transistors and Logic Gates</h2>
 
-<h1>Sum of Products and Product of Sums</h1>
+<h2 id="ss2_3">2.3 Sum of Products and Product of Sums</h2>
+
+<p>Boolean variables and their complements are sometimes refered to as
+  <b>literals</b>. The AND of one or more literals is called a 
+  <b>product</b> or <b>implicant</b>. A <b>minterm</b> is a 
+  product involving <i>all</i> implicants for the function (i.e., 
+  if the function is in N-inputs, an implicant will consist
+  of N literals). Similarly, the OR of literals is often called
+  a <b>sum</b> and a <b>maxterm</b> is a sum involving <i>all</i>
+  implicants for the function.
+</p>
 
 <p>
-The product term in a SOP expression is called an implicant, because it implies the expression is true 
-when the product term is true. Each product term with all the variables is also called a minterm.
- <br>
-To form the SOP, simply AND the variables together that yield true output and OR all these expressions together.<br>
-
-
-A maxterm contains all the variables in true or complementary form all ORed together. Each maxterm corresponds to a row in the truth table. <br>
-To form the POS, simply OR the opposite of the variables together that yield false output and AND all these expressions together.
+The SOP form can be a succinct way of describing a circuit via
+Boolean expressions. To form the SOP from a truth table, 
+simply AND the variables together that yield true output and OR all these expressions together.<br>
+The dual notion of SOP is POS. To form the POS, simply OR the opposite of the variables together 
+that yield false output and AND all these expressions together.<br>
+Using a truth table, one can easily convert between the two forms.
 
 </p>
 
-<h1>Reference for 2-Variable SOP/POS</h1>
+<h3><b><i>Example: </i></b> Find the SOP and POS forms 
+from the truth table below. Describe the max and min terms.</h3>
 
 <center>
-
 <table>
   <thead>
     <tr>
-      <th>x</th>
-      <th>y</th>
-      <th>x'y'</th>
-      <th>x'y</th>
-      <th>xy'</th>
-      <th>xy</th>
+      <th>a</th>
+      <th>b</th>
+      <th>c</th>
+      <th>F</th>
     </tr>
   </thead>
   <tbody>
     <tr>
       <td>0</td>
       <td>0</td>
-      <td>1</td>
       <td>0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <td>0<br></td>
+      <td>1</td>
       <td>0</td>
       <td>0</td>
     </tr>
     <tr>
       <td>0</td>
       <td>1</td>
+      <td>1</td>
       <td>0</td>
+    </tr>
+    <tr>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <td>1</td>
+      <td>0</td>
+      <td>1</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <td>1</td>
       <td>1</td>
       <td>0</td>
       <td>0</td>
     </tr>
     <tr>
       <td>1</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>1</td>
-      <td>0</td>
-    </tr>
-    <tr>
       <td>1</td>
       <td>1</td>
       <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>1</td>
     </tr>
   </tbody>
   </table>
 </center>
-<h1>Reference for 3-Variable SOP/POS</h1>
+
+<p> Looking at the rows
+  that output 1, we can describe the SOP form as:<br>
+  ( ~a & ~b & c ) | ( a & ~b & ~c ) | ( a & ~b & c )
+  <br>
+  Looking at the rows that output 0, we can describe the POS 
+  form as: <br>
+  ( a | b | c ) & ( a | ~b | c ) & ( a | ~b | ~c ) & ( ~a | ~b | c ) & ( ~a | ~b | ~c )<br>
+  The minterms can be described as Sum(1,4,5) and the maxterms can be
+  described as Prod(0,2,3,6,7).
+</p>
+
+<h3><b><i>Note: </i></b>  Though SOP/POS is succinct, is usually
+does not provide a minimal expression.</h3>
+<p>An implicant is called <b>prime</b> if it cannot be combined with
+any other implicants in the equation to form a new implicant with
+fewer literals. The implicants in a minimal equation <i>must</i>
+all be prime implicants. </p>
+
+<h3><b><i>Example: </i></b> Minimize a'b'c' + ab'c' + ab'c. </h3>
+<p>Using Boolean algebra we can write:<br>
+a'b'c' + ab'c' + ab'c </br>
+= a'b'c' + ab'c' <b>+ ab'c'</b> + ab'c (<i>idempotency</i>)<br>
+= <b>b'c'</b> ( a + a ) + <b>ab'</b> ( c' + c ) (<i>distributivity</i>)</br>
+= ( b'c' & <b>1</b> ) + ( ab' & <b>1</b> ) (<i>complements</i>)<br>
+= b'c' + ab' (<i>identity</i>)<br> 
+
+It may seem uninituitive to use idempotency, but doing this naively
+might yield an expression like a'b'c'+ac', which is not as minimal as 
+it could be. K-maps help to make this process more formal.
+</p>
+
+<h2 id="ss2_4">2.4 Karnaugh Maps</h2>
+
+<p><b>Karnaugh maps</b> or <b>K-maps</b> are a graphical grid method
+for simplifying Boolean equations. When drawing a K-map, note that
+adjacent cells differ by only a single change in digit.</p>
+
+<h3><b><i>Example: </i></b> Minimize a'b'c' + ab'c' + ab'c with a K-map. </h3>
+
+<p>We can draw a K-map for this expression as such:</p>
+
 <center> 
 <table>
   <thead>
     <tr>
-      <th>x</th>
-      <th>y</th>
-      <th>z</th>
-      <th>x'y'z'</th>
-      <th>x'y'z</th>
-      <th>x'yz'</th>
-      <th>x'yz</th>
-      <th>xy'z'</th>
-      <th>xy'z</th>
-      <th>xyz'</th>
-      <th>xyz</th>
+      <th>a \ bc<br></th>
+      <th>00</th>
+      <th>01</th>
+      <th>11</th>
+      <th>10</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>1</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-    </tr>
-    <tr>
-      <td>0</td>
-      <td>0</td>
-      <td>1</td>
-      <td>0</td>
-      <td>1</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-    </tr>
-    <tr>
-      <td>0</td>
-      <td>1</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>1</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-    </tr>
-    <tr>
-      <td>0</td>
-      <td>1</td>
-      <td>1</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>1</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-    </tr>
-    <tr>
-      <td>1</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
+      <td style=background-color:yellow;color:black;>0</td>
       <td>1</td>
       <td>0</td>
       <td>0</td>
       <td>0</td>
     </tr>
     <tr>
-      <td>1</td>
-      <td>0</td>
-      <td>1</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>1</td>
-      <td>0</td>
-      <td>0</td>
-    </tr>
-    <tr>
+      <td  style=background-color:yellow;color:black;>1</td>
       <td>1</td>
       <td>1</td>
       <td>0</td>
       <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>1</td>
-      <td>0</td>
-    </tr>
-    <tr>
-      <td>1</td>
-      <td>1</td>
-      <td>1</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>1</td>
     </tr>
   </tbody>
   </table>
- </center>
-</div>
 
+</center>
+
+<p>The 1's in the grid represent the minterms described in the given equation. We
+then group the 1's together in groups of no more than powers of 2.
+Notice, in the K-map above we can make two such groups: the group at coordinates
+(0,00),(1,00) and the group (1,00),(1,01). For now, let the groups
+be represented via super scripts: 
+
+</p>
+
+<center> 
+  <table>
+    <thead>
+      <tr>
+        <th>a \ bc<br></th>
+        <th>00</th>
+        <th>01</th>
+        <th>11</th>
+        <th>10</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td style=background-color:yellow;color:black;>0</td>
+        <td>1<sup>(1)</sup></td>
+        <td>0</td>
+        <td>0</td>
+        <td>0</td>
+      </tr>
+      <tr>
+        <td  style=background-color:yellow;color:black;>1</td>
+        <td>1<sup>(1)</sup><sup>(2)</sup></td>
+        <td>1<sup>(2)</sup></td>
+        <td>0</td>
+        <td>0</td>
+      </tr>
+    </tbody>
+    </table>
+
+  </center>
+  <p>We can analyize this now to see that in the (1) group, the 'a' variable
+  is invariant to the behaviour of the logic. Hence, we extract the prime
+  implicant: b'c'. Likewise in the (2) group we see that 'c' is invariant and Hence
+  we extract the prime implicant ab'. So we arrive at our minimial equation: b'c'+ab'. </p>
+
+  <h3><b><i>Example: </i></b> Provide the prime implicants for the following truth table: </h3>
+    <center>
+      <table>
+        <thead>
+          <tr>
+            <th>x</th>
+            <th>y</th>
+            <th>z</th>
+            <th>F</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+          </tr>
+          <tr>
+            <td>0</td>
+            <td>0</td>
+            <td>1</td>
+            <td>1</td>
+          </tr>
+          <tr>
+            <td>0</td>
+            <td>1</td>
+            <td>0</td>
+            <td>1</td>
+          </tr>
+          <tr>
+            <td>0</td>
+            <td>1</td>
+            <td>1</td>
+            <td>1</td>
+          </tr>
+          <tr>
+            <td>1</td>
+            <td>0</td>
+            <td>0</td>
+            <td>1</td>
+          </tr>
+          <tr>
+            <td>1</td>
+            <td>0</td>
+            <td>1</td>
+            <td>0</td>
+          </tr>
+          <tr>
+            <td>1</td>
+            <td>1</td>
+            <td>0</td>
+            <td>1</td>
+          </tr>
+          <tr>
+            <td>1</td>
+            <td>1</td>
+            <td>1</td>
+            <td>0<br></td>
+          </tr>
+        </tbody>
+        </table>
+    </center>
+<p>We can draw the following K-map for this truth table by plotting the minterms 1,2,3,4, and 6</p>:
+
+<center>
+  <table>
+    <thead>
+      <tr>
+        <th>x \ yz</th>
+        <th>00</th>
+        <th>01</th>
+        <th>11</th>
+        <th>10</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td style=background-color:yellow;color:black;>0</td>
+        <td>0</td>
+        <td>1<sup>(1)</sup></td>
+        <td>1<sup>(1)</sup><sup>(2)</sup></td>
+        <td>1<sup>(2)</sup><sup>(3)</sup></td>
+      </tr>
+      <tr>
+        <td style=background-color:yellow;color:black;>1</td>
+        <td>1<sup>(4)</sup></td>
+        <td>0</td>
+        <td>0</td>
+        <td>1<sup>(3)</sup><sup>(4)</sup></td>
+      </tr>
+    </tbody>
+    </table>
+
+
+</center>
+
+<p>Note the (4) group how it wraps around. Looking at the groups, we can write a minimal expression as:
+x'z + x'y + yz' + xz' . The prime implicants of this table therefore are
+x'z , x'y , yz' , and xz'.</p>
+
+<h3><b><i>Example: </i></b> Write the minimal expression from the following K-table. </h3>
+
+<center>
+  <table>
+    <thead>
+      <tr>
+        <th>xy \ zw</th>
+        <th>00</th>
+        <th>01</th>
+        <th>11</th>
+        <th>10</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td style=background-color:yellow;color:black;>00</td>
+        <td>1</td>
+        <td>0<br></td>
+        <td>0<br></td>
+        <td>1<br></td>
+      </tr>
+      <tr>
+        <td style=background-color:yellow;color:black;>01</td>
+        <td>0<br></td>
+        <td>1</td>
+        <td>0</td>
+        <td>1</td>
+      </tr>
+      <tr>
+        <td style=background-color:yellow;color:black;>11</td>
+        <td>1</td>
+        <td>1</td>
+        <td>0</td>
+        <td>0</td>
+      </tr>
+      <tr>
+        <td style=background-color:yellow;color:black;>10</td>
+        <td>1</td>
+        <td>1</td>
+        <td>0</td>
+        <td>0</td>
+      </tr>
+    </tbody>
+    </table>
+</center>
+
+<p>Depending on the K-map, there may be several different ways
+  to form groups. One such way is:</p> 
+
+  <center>
+    <table>
+      <thead>
+        <tr>
+          <th>xy \ zw</th>
+          <th>00</th>
+          <th>01</th>
+          <th>11</th>
+          <th>10</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td style=background-color:yellow;color:black;>00</td>
+          <td>1<sup>(4)</sup></td>
+          <td>0<br></td>
+          <td>0<br></td>
+          <td>1<sup>(3)</sup><sup>(4)</sup><br></td>
+        </tr>
+        <tr>
+          <td style=background-color:yellow;color:black;>01</td>
+          <td>0<br></td>
+          <td>1<sup>(2)</sup></td>
+          <td>0</td>
+          <td>1<sup>(3)</sup></td>
+        </tr>
+        <tr>
+          <td style=background-color:yellow;color:black;>11</td>
+          <td>1<sup>(1)</sup></td>
+          <td>1<sup>(1)</sup><sup>(2)</sup></td>
+          <td>0</td>
+          <td>0</td>
+        </tr>
+        <tr>
+          <td style=background-color:yellow;color:black;>10</td>
+          <td>1<sup>(1)</sup></td>
+          <td>1<sup>(1)</sup></td>
+          <td>0</td>
+          <td>0</td>
+        </tr>
+      </tbody>
+      </table>
+  </center>
+<p>Where the prime implicants are then: xz' (group 1), yz'w (group 2), x'zw' (group 3), and x'y'w' (group 4).
+Thus the minimal expression is just the sum of these terms.
+
+</p>
+
+<!---->
+<p><a href="#top">Back to top</a></p>
+<!---->
+
+
+</div>
 </body>
-	
 </html>
 	
