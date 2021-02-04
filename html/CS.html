@@ -138,8 +138,11 @@
         <li><a href="#ss2_2">2.2 Transistors and Logic Gates </a></li>
         <li><a href="#ss2_3">2.3 Sum of Products and Product of Sums </a></li>
         <li><a href="#ss2_4">2.4 Karnaugh Maps </a></li>
-
       </ul>
+      <li><a href="#sX">X. Data Structures</a>
+        <ul>
+          <li><a href="#ssX_1">X.1 Summary  </a></li>
+        </ul>
   </ul>
 </div> 
 
@@ -640,6 +643,181 @@ Thus the minimal expression is just the sum of these terms.
 <p><a href="#top">Back to top</a></p>
 <!---->
 
+<h1 id="sX">Data Structures</h1>
+
+<h2 id="ssX_1">Summary</h2>
+<center> 
+<table>
+  <thead>
+    <tr>
+      <th>Data Structures</th>
+      <th>Array</th>
+      <th>Dynamic Array</th>
+      <th>Linked List</th>
+      <th>Doubly-Linked List</th>
+      <th>Stack</th>
+      <th>Queue</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style=background-color:yellow;color:black;>Space</td>
+      <td>O(n)</td>
+      <td>O(n)</td>
+      <td>O(n)</td>
+      <td>O(n)</td>
+      <td>O(n)</td>
+      <td>O(n)</td>
+    </tr>
+    <tr>
+      <td style=background-color:yellow;color:black;>Lookup</td>
+      <td>O(1)</td>
+      <td>O(1)</td>
+      <td>O(n)</td>
+      <td>O(n)</td>
+      <td>X</td>
+      <td>X</td>
+    </tr>
+    <tr>
+      <td style=background-color:yellow;color:black;>Append</td>
+      <td>O(1)</td>
+      <td>O(n)</td>
+      <td>O(1)</td>
+      <td>O(1)</td>
+      <td>X</td>
+      <td>X</td>
+    </tr>
+    <tr>
+      <td style=background-color:yellow;color:black;>Insert</td>
+      <td>O(n)</td>
+      <td>O(n)</td>
+      <td>O(n)</td>
+      <td>O(n)</td>
+      <td>X</td>
+      <td>X</td>
+    </tr>
+    <tr>
+      <td style=background-color:yellow;color:black;>Delete<br></td>
+      <td>O(n)</td>
+      <td>O(n)</td>
+      <td>O(n)</td>
+      <td>O(1)</td>
+      <td>X</td>
+      <td>X</td>
+    </tr>
+    <tr>
+      <td style=background-color:yellow;color:black;>Prepend</td>
+      <td>X</td>
+      <td>X</td>
+      <td>O(1)</td>
+      <td>X</td>
+      <td>X</td>
+      <td>X</td>
+    </tr>
+    <tr>
+      <td style=background-color:yellow;color:black;>Peek</td>
+      <td>X</td>
+      <td>X</td>
+      <td>X</td>
+      <td>X</td>
+      <td>O(1)</td>
+      <td>O(1)</td>
+    </tr>
+    <tr>
+      <td style=background-color:yellow;color:black;>Push/Enqueue</td>
+      <td>X</td>
+      <td>X</td>
+      <td>X</td>
+      <td>X</td>
+      <td>O(1)</td>
+      <td>O(1)</td>
+    </tr>
+    <tr>
+      <td style=background-color:yellow;color:black;>Pop/Dequeue</td>
+      <td>X</td>
+      <td>X</td>
+      <td>X</td>
+      <td>X</td>
+      <td>O(1)</td>
+      <td>O(1)</td>
+    </tr>
+  </tbody>
+  </table>
+</center>
+
+
+<h3>Array Pros and Cons</h3>
+<ul>
+
+  <li><p> Pros:    </p>
+  <ul>
+    <li><p>Fast lookups. </p>    </li>
+    <li><p>Fast Appends. </p>    </li>
+
+
+  </ul>
+  
+  </li>
+  <li><p> Cons:    </p>
+    <ul>
+      <li><p>Fixed Size </p>    </li>
+      <li><p>Costly inserts and deletes </p>    </li>
+
+    </ul>
+    
+    </li>
+
+</ul>
+
+<h3>Dynamic Array Pros and Cons</h3>
+<ul>
+
+  <li><p> Pros:    </p>
+  <ul>
+    <li><p>Fast lookups. </p>    </li>
+    <li><p>Variable size. </p>    </li>
+    <li><p>Cache-friendly. </p>    </li>
+
+
+
+  </ul>
+  
+  </li>
+  <li><p> Cons:    </p>
+    <ul>
+      <li><p>Slow worst-case appends. </p>    </li>
+      <li><p>Costly inserts and deletes. </p>    </li>
+
+    </ul>
+    
+    </li>
+
+</ul>
+
+<h3>Linked List Pros and Cons</h3>
+<ul>
+
+  <li><p> Pros:    </p>
+  <ul>
+    <li><p>Fast operations on the ends. </p>    </li>
+    <li><p>Flexible size. </p>    </li>
+
+  </ul>
+  
+  </li>
+  <li><p> Cons:    </p>
+    <ul>
+      <li><p>Costly lookups. </p>    </li>
+  
+    </ul>
+    
+    </li>
+
+</ul>
+
+<!---->
+<p><a href="#top">Back to top</a></p>
+<!---->
 
 </div>
 </body>
