@@ -140,9 +140,14 @@
         <li><a href="#ss2_4">2.4 Karnaugh Maps </a></li>
         <li><a href="#ss2_5">2.5 Combinational circuits </a></li>
       </ul>
-      <li><a href="#sX">X. Data Structures</a>
+      <li><a href="#sX">X. Data Structures and Algorithms</a>
         <ul>
-          <li><a href="#ssX_1">X.1 Summary  </a></li>
+          <li><a href="#ssX_1">X.1 Common Data Structure Operations  </a></li>
+        </ul>
+      <li><a href="#sY">Y. C/C++</a>
+        <ul>
+          <li><a href="#ssY_1">Y.1 C  </a></li>
+          <li><a href="#ssY_2">Y.1 C++  </a></li>
         </ul>
   </ul>
 </div> 
@@ -647,108 +652,260 @@ Thus the minimal expression is just the sum of these terms.
 <p><a href="#top">Back to top</a></p>
 <!---->
 
-<h1 id="sX">Data Structures</h1>
+<h1 id="sX">X. Data Structures and Algorithms</h1>
 
-<h2 id="ssX_1">Summary</h2>
-<center> 
-<table>
-  <thead>
-    <tr>
-      <th>Data Structures</th>
-      <th>Array</th>
-      <th>Dynamic Array</th>
-      <th>Linked List</th>
-      <th>Doubly-Linked List</th>
-      <th>Stack</th>
-      <th>Queue</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td style=background-color:yellow;color:black;>Space</td>
-      <td>O(n)</td>
-      <td>O(n)</td>
-      <td>O(n)</td>
-      <td>O(n)</td>
-      <td>O(n)</td>
-      <td>O(n)</td>
-    </tr>
-    <tr>
-      <td style=background-color:yellow;color:black;>Lookup</td>
-      <td>O(1)</td>
-      <td>O(1)</td>
-      <td>O(n)</td>
-      <td>O(n)</td>
-      <td>X</td>
-      <td>X</td>
-    </tr>
-    <tr>
-      <td style=background-color:yellow;color:black;>Append</td>
-      <td>O(1)</td>
-      <td>O(n)</td>
-      <td>O(1)</td>
-      <td>O(1)</td>
-      <td>X</td>
-      <td>X</td>
-    </tr>
-    <tr>
-      <td style=background-color:yellow;color:black;>Insert</td>
-      <td>O(n)</td>
-      <td>O(n)</td>
-      <td>O(n)</td>
-      <td>O(n)</td>
-      <td>X</td>
-      <td>X</td>
-    </tr>
-    <tr>
-      <td style=background-color:yellow;color:black;>Delete<br></td>
-      <td>O(n)</td>
-      <td>O(n)</td>
-      <td>O(n)</td>
-      <td>O(1)</td>
-      <td>X</td>
-      <td>X</td>
-    </tr>
-    <tr>
-      <td style=background-color:yellow;color:black;>Prepend</td>
-      <td>X</td>
-      <td>X</td>
-      <td>O(1)</td>
-      <td>X</td>
-      <td>X</td>
-      <td>X</td>
-    </tr>
-    <tr>
-      <td style=background-color:yellow;color:black;>Peek</td>
-      <td>X</td>
-      <td>X</td>
-      <td>X</td>
-      <td>X</td>
-      <td>O(1)</td>
-      <td>O(1)</td>
-    </tr>
-    <tr>
-      <td style=background-color:yellow;color:black;>Push/Enqueue</td>
-      <td>X</td>
-      <td>X</td>
-      <td>X</td>
-      <td>X</td>
-      <td>O(1)</td>
-      <td>O(1)</td>
-    </tr>
-    <tr>
-      <td style=background-color:yellow;color:black;>Pop/Dequeue</td>
-      <td>X</td>
-      <td>X</td>
-      <td>X</td>
-      <td>X</td>
-      <td>O(1)</td>
-      <td>O(1)</td>
-    </tr>
-  </tbody>
-  </table>
+<h2 id="ssX_1">X.1Common Data Structure Operations</h2>
+
+<p>Source: <a href="https://www.bigocheatsheet.com/">bigocheatsheet.com</a> .</p>
+
+<center>
+  <style type="text/css">
+
+    .tg .tg-90ko{background-color:yellow;border-color:#000000;color:#000000;text-align:center;vertical-align:top}
+    .tg .tg-qddy{background-color:#c32c2c;border-color:inherit;color:#000000;text-align:center;vertical-align:top}
+    .tg .tg-ohfq{background-color:#90ffff;border-color:inherit;color:#000000;text-align:center;vertical-align:top}
+    .tg .tg-vciu{background-color:#c26743;border-color:#ffffff;color:#000000;text-align:center;vertical-align:top}
+    .tg .tg-9ism{background-color:#c26743;border-color:#ffffff;color:#000000;text-align:center;vertical-align:top}
+    .tg .tg-ywr2{background-color:#c26743;border-color:inherit;color:#000000;text-align:center;vertical-align:top}
+    .tg .tg-bkz4{background-color:yellow;border-color:inherit;color:#000000;text-align:center;vertical-align:top}
+    .tg .tg-gi7t{border-color:inherit;color:#000000;text-align:center;vertical-align:top}
+    .tg .tg-qyya{background-color:#c26743;border-color:inherit;color:#000000;text-align:center;vertical-align:top}
+    .tg .tg-wsze{background-color:#90ffff;border-color:inherit;color:#000000;text-align:center;vertical-align:top}
+    .tg .tg-0d7m{background-color:#90ffff;border-color:#ffffff;color:#000000;text-align:center;vertical-align:top}
+    .tg .tg-9yzt{background-color:#61d366;border-color:inherit;color:#000000;text-align:center;vertical-align:top}
+    .tg .tg-bio9{background-color:#61d366;border-color:inherit;color:#000000;text-align:center;vertical-align:top}
+    .tg .tg-ml2k{border-color:inherit;color:antiquewhite;text-align:center;vertical-align:top}
+    </style>
+
+    <table class="tg">
+    <thead>
+      <tr>
+        <th class="tg-bkz4" rowspan="3"><br>Data Structure</th>
+        <th class="tg-90ko" colspan="8">Time Compleixty</th>
+        <th class="tg-90ko" rowspan="3"><br>Space Complexity</th>
+      </tr>
+      <tr>
+        <td class="tg-90ko">Average<br></td>
+        <td class="tg-gi7t" colspan="3"></td>
+        <td class="tg-90ko">Worst<br></td>
+        <td class="tg-gi7t" colspan="3"></td>
+      </tr>
+      <tr>
+        <td class="tg-90ko">Access</td>
+        <td class="tg-90ko">Search</td>
+        <td class="tg-90ko">Insertion</td>
+        <td class="tg-90ko">Deletion</td>
+        <td class="tg-90ko">Access</td>
+        <td class="tg-90ko">Search</td>
+        <td class="tg-90ko">Insertion</td>
+        <td class="tg-90ko">Deletion</td>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="tg-bkz4"><a href="https://en.wikipedia.org/wiki/Array_data_structure" target="_blank" rel="noopener noreferrer" style="color:#000000">Array</a></td>
+        <td class="tg-ohfq">Θ(1)</td>
+        <td class="tg-qyya">Θ(n)</td>
+        <td class="tg-qyya">Θ(n)</td>
+        <td class="tg-qyya">Θ(n)</td>
+        <td class="tg-ohfq">O(1)</td>
+        <td class="tg-vciu">O(n)</td>
+        <td class="tg-9ism">O(n)</td>
+        <td class="tg-9ism">O(n)</td>
+        <td class="tg-9ism">O(n)</td>
+      </tr>
+      <tr>
+        <td class="tg-bkz4"><a href="https://en.wikipedia.org/wiki/Stack_(abstract_data_type)" target="_blank" rel="noopener noreferrer"style="color:#000000">Stack</a></td>
+        <td class="tg-qyya">Θ(n)</td>
+        <td class="tg-qyya">Θ(n)</td>
+        <td class="tg-wsze">Θ(1)</td>
+        <td class="tg-0d7m">Θ(1)</td>
+        <td class="tg-qyya">O(n)</td>
+        <td class="tg-qyya">O(n)</td>
+        <td class="tg-wsze">O(1)</td>
+        <td class="tg-wsze">O(1)</td>
+        <td class="tg-qyya">O(n)</td>
+      </tr>
+      <tr>
+        <td class="tg-bkz4"><a href="https://en.wikipedia.org/wiki/Queue_(abstract_data_type)" target="_blank" rel="noopener noreferrer"style="color:#000000">Queue</a></td>
+        <td class="tg-qyya">Θ(n)</td>
+        <td class="tg-qyya">Θ(n)</td>
+        <td class="tg-wsze">Θ(1)</td>
+        <td class="tg-wsze">Θ(1)</td>
+        <td class="tg-qyya">O(n)</td>
+        <td class="tg-qyya">O(n)</td>
+        <td class="tg-wsze">O(1)</td>
+        <td class="tg-wsze">O(1)</td>
+        <td class="tg-qyya">O(n)</td>
+      </tr>
+      <tr>
+        <td class="tg-bkz4"><a href="https://en.wikipedia.org/wiki/Linked_list#Singly_linked_lists" target="_blank" rel="noopener noreferrer"style="color:#000000">Singly-Linked List</a></td>
+        <td class="tg-ywr2">Θ(n)</td>
+        <td class="tg-qyya">Θ(n)</td>
+        <td class="tg-wsze">Θ(1)</td>
+        <td class="tg-wsze">Θ(1)</td>
+        <td class="tg-qyya">O(n)</td>
+        <td class="tg-qyya">O(n)</td>
+        <td class="tg-wsze">O(1)</td>
+        <td class="tg-wsze">O(1)</td>
+        <td class="tg-qyya">O(n)</td>
+      </tr>
+      <tr>
+        <td class="tg-bkz4"><a href="https://en.wikipedia.org/wiki/Doubly_linked_list" target="_blank" rel="noopener noreferrer"style="color:#000000">Doubly-Linked List</a></td>
+        <td class="tg-qyya">Θ(n)</td>
+        <td class="tg-qyya">Θ(n)</td>
+        <td class="tg-wsze">Θ(1)</td>
+        <td class="tg-wsze">Θ(1)</td>
+        <td class="tg-qyya">O(n)</td>
+        <td class="tg-qyya">O(n)</td>
+        <td class="tg-wsze">O(1)</td>
+        <td class="tg-wsze">O(1)</td>
+        <td class="tg-qyya">O(n)</td>
+      </tr>
+      <tr>
+        <td class="tg-bkz4"><a href="https://en.wikipedia.org/wiki/Binary_search_tree" target="_blank" rel="noopener noreferrer"style="color:#000000">Binary Search Tree</a></td>
+        <td class="tg-9yzt">Θ(log(n))</td>
+        <td class="tg-bio9">Θ(log(n))</td>
+        <td class="tg-bio9">Θ(log(n))</td>
+        <td class="tg-bio9">Θ(log(n))</td>
+        <td class="tg-qyya">O(n)</td>
+        <td class="tg-qyya">O(n)</td>
+        <td class="tg-qyya">O(n)</td>
+        <td class="tg-qyya">O(n)</td>
+        <td class="tg-qyya">O(n)</td>
+      </tr>
+      <tr>
+        <td class="tg-bkz4"><a href="https://en.wikipedia.org/wiki/Hash_table" target="_blank" rel="noopener noreferrer"style="color:#000000">Hash Table</a></td>
+        <td class="tg-ml2k">N/A</td>
+        <td class="tg-wsze">Θ(1)</td>
+        <td class="tg-wsze">Θ(1)</td>
+        <td class="tg-wsze">Θ(1)</td>
+        <td class="tg-ml2k">N/A</td>
+        <td class="tg-qyya">O(n)</td>
+        <td class="tg-qyya">O(n)</td>
+        <td class="tg-qyya">O(n)</td>
+        <td class="tg-qyya">O(n)</td>
+      </tr>
+      <tr>
+        <td class="tg-bkz4"><a href="https://en.wikipedia.org/wiki/Skip_list" target="_blank" rel="noopener noreferrer"style="color:#000000">Skip List</a></td>
+        <td class="tg-bio9">Θ(log(n))</td>
+        <td class="tg-bio9">Θ(log(n))</td>
+        <td class="tg-bio9">Θ(log(n))</td>
+        <td class="tg-bio9">Θ(log(n))</td>
+        <td class="tg-qyya">O(n)</td>
+        <td class="tg-qyya">O(n)</td>
+        <td class="tg-qyya">O(n)</td>
+        <td class="tg-qyya">O(n)</td>
+        <td class="tg-qddy">O(n log(n))</td>
+      </tr>
+      <tr>
+        <td class="tg-bkz4"><a href="https://en.wikipedia.org/wiki/Cartesian_tree" target="_blank" rel="noopener noreferrer"style="color:#000000">Cartesian Tree</a></td>
+        <td class="tg-ml2k">N/A</td>
+        <td class="tg-bio9">Θ(log(n))</td>
+        <td class="tg-bio9">Θ(log(n))</td>
+        <td class="tg-bio9">Θ(log(n))</td>
+        <td class="tg-ml2k">N/A</td>
+        <td class="tg-qyya">O(n)</td>
+        <td class="tg-qyya">O(n)</td>
+        <td class="tg-qyya">O(n)</td>
+        <td class="tg-qyya">O(n)</td>
+      </tr>
+      <tr>
+        <td class="tg-bkz4"><a href="https://en.wikipedia.org/wiki/B-tree" target="_blank" rel="noopener noreferrer"style="color:#000000">B-Tree</a></td>
+        <td class="tg-bio9">Θ(log(n))</td>
+        <td class="tg-bio9">Θ(log(n))</td>
+        <td class="tg-bio9">Θ(log(n))</td>
+        <td class="tg-bio9">Θ(log(n))</td>
+        <td class="tg-bio9">Θ(log(n))</td>
+        <td class="tg-bio9">Θ(log(n))</td>
+        <td class="tg-bio9">Θ(log(n))</td>
+        <td class="tg-bio9">Θ(log(n))</td>
+        <td class="tg-qyya">O(n)</td>
+      </tr>
+      <tr>
+        <td class="tg-bkz4"><a href="https://en.wikipedia.org/wiki/Red%E2%80%93black_tree" target="_blank" rel="noopener noreferrer"style="color:#000000">Red-Black Tree</a></td>
+        <td class="tg-bio9">Θ(log(n))</td>
+        <td class="tg-bio9">Θ(log(n))</td>
+        <td class="tg-bio9">Θ(log(n))</td>
+        <td class="tg-bio9">Θ(log(n))</td>
+        <td class="tg-bio9">Θ(log(n))</td>
+        <td class="tg-bio9">Θ(log(n))</td>
+        <td class="tg-bio9">Θ(log(n))</td>
+        <td class="tg-bio9">Θ(log(n))</td>
+        <td class="tg-qyya">O(n)</td>
+      </tr>
+      <tr>
+        <td class="tg-bkz4"><a href="https://en.wikipedia.org/wiki/Splay_tree" target="_blank" rel="noopener noreferrer"style="color:#000000">Splay Tree</a></td>
+        <td class="tg-ml2k">N/A</td>
+        <td class="tg-bio9">Θ(log(n))</td>
+        <td class="tg-bio9">Θ(log(n))</td>
+        <td class="tg-bio9">Θ(log(n))</td>
+        <td class="tg-ml2k">N/A</td>
+        <td class="tg-bio9">Θ(log(n))</td>
+        <td class="tg-bio9">Θ(log(n))</td>
+        <td class="tg-bio9">Θ(log(n))</td>
+        <td class="tg-qyya">O(n)</td>
+      </tr>
+      <tr>
+        <td class="tg-bkz4"><a href="https://en.wikipedia.org/wiki/AVL_tree" target="_blank" rel="noopener noreferrer"style="color:#000000">AVL Tree</a></td>
+        <td class="tg-bio9">Θ(log(n))</td>
+        <td class="tg-bio9">Θ(log(n))</td>
+        <td class="tg-bio9">Θ(log(n))</td>
+        <td class="tg-bio9">Θ(log(n))</td>
+        <td class="tg-bio9">Θ(log(n))</td>
+        <td class="tg-bio9">Θ(log(n))</td>
+        <td class="tg-bio9">Θ(log(n))</td>
+        <td class="tg-bio9">Θ(log(n))</td>
+        <td class="tg-qyya">O(n)</td>
+      </tr>
+      <tr>
+        <td class="tg-bkz4"><a href="https://en.wikipedia.org/wiki/K-d_tree" target="_blank" rel="noopener noreferrer"style="color:#000000">KD Tree</a></td>
+        <td class="tg-bio9">Θ(log(n))</td>
+        <td class="tg-bio9">Θ(log(n))</td>
+        <td class="tg-bio9">Θ(log(n))</td>
+        <td class="tg-bio9">Θ(log(n))</td>
+        <td class="tg-qyya">O(n)</td>
+        <td class="tg-qyya">O(n)</td>
+        <td class="tg-qyya">O(n)</td>
+        <td class="tg-qyya">O(n)</td>
+        <td class="tg-qyya">O(n)</td>
+      </tr>
+    </tbody>
+    </table>
 </center>
 
+
+
+
+<!---->
+<p><a href="#top">Back to top</a></p>
+<!---->
+
+<h1 id="sY">Y. C/C++</h1>
+
+<h2>Resources</h2> 
+<ul>
+  <li><a href="https://isocpp.org/" target="_blank">isocpp.org</a></li>
+  <li><a href="https://en.cppreference.com/w/" target="_blank">cppreference.com</a></li>
+  <li><a href="http://www.cplusplus.com/" target="_blank">cplusplus.com</a></li>
+</ul>
+
+<h2 id="ssY_1">Y.1 C</h2>
+
+<ul>
+  <li><a href="http://www.catb.org/esr/structure-packing/" target="_blank">Struct padding 1</a> <a href="https://fresh2refresh.com/c-programming/c-structure-padding/" target="_blank">Struct Padding 2</a></li>
+  <li></li>
+</ul>
+
+<h2 id="ssY_2">Y.1 C++</h2>
+<ul>
+  <li><a href="https://stackoverflow.com/questions/57483/what-are-the-differences-between-a-pointer-variable-and-a-reference-variable-in" target="_blank"> Pointers vs. References</a></li>
+  <ul>
+    <li><a href="http://www.vishalchovatiya.com/unique_ptr-with-example-in-c/" target="_blank">Intro to smart pointers</a></li>
+    <li><a href="https://www.modernescpp.com/index.php/c-core-guidelines-rules-to-smart-pointers" target="_blank">Smart pointer official guidelines</a></li>
+  </ul>
+  <li><a href="https://stackoverflow.com/questions/2454214/is-it-a-good-practice-to-always-use-smart-pointers" target="_blank">When to use smart pointers</a></li>
+</ul>
 
 <!---->
 <p><a href="#top">Back to top</a></p>
