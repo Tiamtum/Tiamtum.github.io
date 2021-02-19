@@ -221,7 +221,44 @@ For example:<br>
 </center> 
 
 <h2 id="ss1_2">1.2 Signed, Unsigned, One's/Two's Complement Binary Numbers</h1>
-    
+
+<p>. In computer systems, there are several different techniques used to represent numbers. The three techniques consider here are Sign Magnitude,
+   Two's Complement, and One's Complement. </p>
+<ul>
+  <li><h3>Sign Magnitude Representation</h3></li>
+  <p>In signed magnitude, the most significant bit acts as the sign. The max range of an n-bit number 
+    using sign magnitude is between <img src="../resources/latex/minbound1.gif" alt="-(2^{n-1}-1)">  and <img src="../resources/latex/maxbound1.gif" alt="(2^{n-1}-1)">. Note that,
+    there are two representations for zero with sign magnitude, for example 10000000 and 00000000. <br><br> To make this representation:
+    <ol>
+      <li><p>Convert the absolute value of the number to binary.</p> </li>
+      <li><p>Pad bits if needed and use the MSb for the sign: 0 for positive, 1 for negative.</p></li>
+    </ol>
+    <li><h3>One's Complement Representation</h3></li>
+    <p>A ones' complement system or ones' complement arithmetic is a system in which negative numbers 
+      are represented by the inverse of the binary representations of their corresponding positive numbers. The max range
+    of an n-bit number using one's complement is between <img src="../resources/latex/minbound2.gif" alt="-(2^{n-1}-1)">  and <img src="../resources/latex/maxbound2.gif" alt="(2^{n-1}-1)">.
+    Note that like sign magnitude representation, there is also two ways to represent zero with one's complement, 1111 and 0000 for example.
+  <br><br> To make this representation:  </p>
+  <ol>
+    <li><p>Convert the absolute value of the number to binary.</p> </li>
+    <li>Pad bits if needed.</li>
+    <li><p>Complement the binary number.</p></li>
+  </ol>
+
+  <li><h3>Two's Complement Representation</h3></li>
+  <p>Two's complement is the most common method of representing signed integers on computers, and more generally, fixed point binary values.
+    Compared to other systems for representing signed numbers (e.g., ones' complement), two's complement has the advantage that the fundamental arithmetic operations of addition, subtraction, and multiplication are identical to those for unsigned binary numbers (as long as the inputs are represented 
+    in the same number of bits as the output, and any overflow beyond those bits is discarded from the result). This property makes the system simpler to implement, 
+    especially for higher-precision arithmetic. Unlike ones' complement systems, two's complement has no representation for negative zero, and thus does not suffer 
+    from its associated difficulties. The max range of an n-bit number using two's complement is between <img src="../resources/latex/minbound3.gif" alt="-(2^{n-1})">  and <img src="../resources/latex/maxbound3.gif" alt="(2^{n-1}-1)">
+<br><br> To make this representation:  </p>
+<ol>
+  <li><p>Find the one's complement representation of the number.</p> </li>
+  <li><p>Add 1 to the result.</p></li>
+</ol>
+
+
+</ul>
 
 <!---->
 <p><a href="#top">Back to top</a></p>
@@ -910,6 +947,7 @@ Thus the minimal expression is just the sum of these terms.
 <!---->
 <p><a href="#top">Back to top</a></p>
 <!---->
+
 
 </div>
 </body>
