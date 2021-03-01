@@ -246,8 +246,8 @@ For example:<br>
     Note that like sign magnitude representation, there is also two ways to represent zero with one's complement, 1111 and 0000 for example.
   <br><br> To make this representation:  </p>
   <ol>
-    <li><p>Convert the absolute value of the number to binary.</p> </li>
-    <li>Pad bits if needed.</li>
+    <li><p>Convert the absolute value of the number to binary and pad 0's if needed.</p> </li>
+    <li><p>If the number is greater than zero, we are finished. Else:</p></li>
     <li><p>Complement the binary number.</p></li>
   </ol>
 
@@ -260,11 +260,18 @@ For example:<br>
 <br><br> To make this representation:  </p>
 <ol>
   <li><p>Find the one's complement representation of the number.</p> </li>
-  <li><p>Add 1 to the result.</p></li>
+  <li><p>If the number is negative, add one to the result of the one's complement.</p></li>
 </ol>
-
-
 </ul>
+
+<h3><b><i>Example: </i></b> Find the 8-bit sign magnitude, one's and two's complement representation of the numbers 42 and -13. </h3>
+
+<p>
+42 in binary is 101010. Padding to 8-bits and using the MSb for sign, we have 00101010 as the sign magnitude representation.<br>
+Since 42 is positive, the one's and two's complement representation will also be 00101010.<br><br>
+13 in binary is 1101. Padding to 8-bits and using MSb for sign, we have 10001101 as the sign magnitude representation. <br>
+Since -13 is negative, the one's complement will be (00001101)^c = 11110010. The two's complement will be 11110010+1 = 11110011.
+</p>
 
 <!---->
 <p><a href="#top">Back to top</a></p>
