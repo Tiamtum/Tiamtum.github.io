@@ -136,6 +136,12 @@
       <ul>
         <li><a href="#ss2_1">2.1 Boolean Algebra and Truth Tables </a></li>
         <li><a href="#ss2_2">2.2 Transistors and Logic Gates </a></li>
+        <ul>
+            <li><a href="#ss2_2_1">2.2.1 Transistors</a></li>
+            <li><a href="#ss2_2_2">2.2.2 Logic Gates</a></li>
+            <li><a href="#ss2_2_3">2.2.3 Combinational Circuits - Multiplexors, Demultiplexers, and Decoders</a></li>
+          </li>
+        </ul>
         <li><a href="#ss2_3">2.3 Sum of Products and Product of Sums </a></li>
         <li><a href="#ss2_4">2.4 Karnaugh Maps </a></li>
         <li><a href="#ss2_5">2.5 Combinational circuits </a></li>
@@ -280,6 +286,162 @@ For example:<br>
 
 
 <h2 id="ss2_2">2.2 Transistors and Logic Gates</h2>
+
+<h2 id="ss2_2_1">2.2.1 Transistors</h2>
+<p><b>Transistors</b> are electrically controlled switches that turn ON or OFF when a voltage or current is applied to 
+a control terminal. There are two main types of transistors:<br>
+<ol>
+  <li>Bipolar junction transistors.</li>
+  <li>Metal-Oxide-Semiconductor Field Effect Transistors (MOSFETs)</li>
+</ol>
+</p>
+<p>We will primarily focus on MOSFETs. For the inner details of how such a transistor is made, refer to <a href="https://en.wikipedia.org/wiki/MOSFET">here</a> or section
+  1.7 of <a href="https://www.amazon.ca/Digital-Design-Computer-Architecture-Harris/dp/0123944244">this</a> text (free to obtain from various sources).<br>
+
+There are two flavors of MOSFET: <b>nMOS</b> and <b>pMOS</b>. The gist of their functionality is outlined in this diagram:</p>
+
+<center>
+
+<img src="../resources/images/transparencies/nmospmos.png" width="650" height="400" alt=nmospmos.png">
+
+</center>
+<p>
+The voltage at the gate (g) regulates the flow of current between the source (s) and drain (d). 
+nMOS transistors are OFF when the gate is 0 and ON when the gate is 1. pMOS  transistors are just the opposite: 
+ON when the gate is 0 and OFF when
+the gate is 1.<br></p>
+
+<p>When designing schematics using MOSFETs, the following convention is used:</p>
+<center>
+
+  <img src="../resources/images/transparencies/generalmosfetform.png" width="650" height="400" alt=generalmosfetform.png">
+  
+  </center>
+
+<h3><b><i>Example: </i></b> NOT Gate Schematic </h3>
+<center>
+
+  <img src="../resources/images/transparencies/not_sch.png" width="650" height="400" alt=not_sch.png.>
+  
+  </center>
+<h3><b><i>Example: </i></b> Two Input NAND Gate Schematic </h3>
+<center>
+
+  <img src="../resources/images/transparencies/twoinpnand_sch.png" width="650" height="400" alt="twoinpnand_sch.png">
+  
+  </center>
+
+  <h3><b><i>Example: </i></b> Two Input NOR Gate Schematic </h3>
+  <center>
+  
+    <img src="../resources/images/transparencies/twoinpnor_sch.png" width="650" height="400" alt="twoinpnor_sch.png">
+    
+    </center>
+
+<p>In CMOS, <b><i>all</i></b> other gates are constructed via NOT, NOR, and NAND gates. The number of transistors per gate can therefore be calculated:
+  6 for AND, 6 for OR, 24 for XOR (4 AND gates), etc.  </p>
+
+    <center>
+
+
+<h2 id="ss2_2_2">2.2.2 Logic Gates</h2>
+
+<img src="../resources/images/transparencies/logicgatesymbols.png" width="650" height="400" alt="logicgatesymbols.png">
+
+
+
+<style type="text/css">
+  
+  .tg .tg-baqh{text-align:center;vertical-align:top}
+  .tg .tg-c3ow{border-color:inherit;text-align:center;vertical-align:top}
+  .tg .tg-0lax{text-align:left;vertical-align:top}
+  </style>
+  <table class="tg">
+  <thead>
+    <tr>
+      <th class="tg-baqh" colspan="3" rowspan="2">Inputs</th>
+      <th class="tg-baqh" colspan="8" rowspan="2">Logic Gates</th>
+    </tr>
+    <tr>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td class="tg-baqh">X</td>
+      <td class="tg-baqh">Y</td>
+      <td class="tg-0lax" rowspan="5"></td>
+      <td class="tg-baqh">OR</td>
+      <td class="tg-baqh">NOR</td>
+      <td class="tg-baqh">AND</td>
+      <td class="tg-baqh">NAND</td>
+      <td class="tg-baqh">XOR</td>
+      <td class="tg-baqh">XNOR</td>
+      <td class="tg-baqh">BUFF*</td>
+      <td class="tg-baqh">NOT</td>
+    </tr>
+    <tr>
+      <td class="tg-c3ow">0</td>
+      <td class="tg-c3ow">0</td>
+      <td class="tg-c3ow">0</td>
+      <td class="tg-c3ow">1</td>
+      <td class="tg-c3ow">0</td>
+      <td class="tg-c3ow">1</td>
+      <td class="tg-c3ow">0</td>
+      <td class="tg-c3ow">1</td>
+      <td class="tg-baqh">0</td>
+      <td class="tg-baqh">1</td>
+    </tr>
+    <tr>
+      <td class="tg-c3ow">0</td>
+      <td class="tg-c3ow">1</td>
+      <td class="tg-c3ow">1</td>
+      <td class="tg-c3ow">0</td>
+      <td class="tg-c3ow">0</td>
+      <td class="tg-c3ow">1</td>
+      <td class="tg-c3ow">1</td>
+      <td class="tg-c3ow">0</td>
+      <td class="tg-baqh">0</td>
+      <td class="tg-baqh">1</td>
+    </tr>
+    <tr>
+      <td class="tg-c3ow">1</td>
+      <td class="tg-c3ow">0</td>
+      <td class="tg-c3ow">1</td>
+      <td class="tg-c3ow">0</td>
+      <td class="tg-c3ow">0</td>
+      <td class="tg-c3ow">1</td>
+      <td class="tg-c3ow">1</td>
+      <td class="tg-c3ow">0</td>
+      <td class="tg-baqh">1</td>
+      <td class="tg-baqh">0</td>
+    </tr>
+    <tr>
+      <td class="tg-baqh">1</td>
+      <td class="tg-baqh">1</td>
+      <td class="tg-baqh">1</td>
+      <td class="tg-baqh">0</td>
+      <td class="tg-baqh">1</td>
+      <td class="tg-baqh">0</td>
+      <td class="tg-baqh">0</td>
+      <td class="tg-baqh">1</td>
+      <td class="tg-baqh">1</td>
+      <td class="tg-baqh">0</td>
+    </tr>
+  </tbody>
+  </table>
+
+</center>
+
+<p>*From the logical point of view, a buffer is no different from a wire, so
+  it might seem useless. However, from the analog point of view, the buffer
+  might have desirable characteristics such as the ability to deliver large
+  amounts of current to a motor or the ability to quickly send its output
+  to many gates. This is an example of why we need to consider multiple
+  levels of abstraction to fully understand a system; the digital abstraction
+  hides the real purpose of a buffer.</p>
+
+  <h2 id="ss2_2_3">2.2.3 Combinational Circuits - Multiplexors, Demultiplexers, and Decoders</h2>
+<p>From logic circuits, one can make more elaborate circuits - so called <b>combinational circuits</b>.</p>
 
 <h2 id="ss2_3">2.3 Sum of Products and Product of Sums</h2>
 
