@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <link rel="stylesheet" href="../../resources/css/styles.css">
+    <style>
+        table {
+            border: 1px solid goldenrod;
+            font-family: "RS";
+            color: antiquewhite;
+            font-size: x-large;
+            width: 60%;
+            text-align: center;
+        }
+
+        td {
+            border: 1px solid goldenrod;
+
+        }
+
+        tr {
+            border: 1px solid goldenrod;
+            color: white;
+        }
+
+        th {
+            background-color: yellow;
+            color: black;
+        }
+
+        b {
+            color: #DF9DA9;
+        }
+
+        i {
+            color: #DF9DA9;
+        }
+    </style>
+
+</head>
+
+<body background="../../resources/css/stars.gif">
+    <a href="../CS_contents.html">Return to contents.</a>
+    <h1 id="sX">X. Data Structures and Algorithms</h1>
+
+    <ul>
+        <li><a href="#ssX_1">X.1 Common Data Structure Time and Space Complexities Summary </a></li>
+    </ul>
+
+    <h2 id="ssX_1">X.1 Common Data Structure Time and Space Complexities Summary</h2>
+
+    <p>Source: <a href="https://www.bigocheatsheet.com/">bigocheatsheet.com</a> .</p>
+
+    <center>
+        <style type="text/css">
+            .tg .tg-90ko {
+                background-color: yellow;
+                border-color: #000000;
+                color: #000000;
+                text-align: center;
+                vertical-align: top
+            }
+
+            .tg .tg-qddy {
+                background-color: #c32c2c;
+                border-color: inherit;
+                color: #000000;
+                text-align: center;
+                vertical-align: top
+            }
+
+            .tg .tg-ohfq {
+                background-color: #90ffff;
+                border-color: inherit;
+                color: #000000;
+                text-align: center;
+                vertical-align: top
+            }
+
+            .tg .tg-vciu {
+                background-color: #c26743;
+                border-color: #ffffff;
+                color: #000000;
+                text-align: center;
+                vertical-align: top
+            }
+
+            .tg .tg-9ism {
+                background-color: #c26743;
+                border-color: #ffffff;
+                color: #000000;
+                text-align: center;
+                vertical-align: top
+            }
+
+            .tg .tg-ywr2 {
+                background-color: #c26743;
+                border-color: inherit;
+                color: #000000;
+                text-align: center;
+                vertical-align: top
+            }
+
+            .tg .tg-bkz4 {
+                background-color: yellow;
+                border-color: inherit;
+                color: #000000;
+                text-align: center;
+                vertical-align: top
+            }
+
+            .tg .tg-gi7t {
+                border-color: inherit;
+                color: #000000;
+                text-align: center;
+                vertical-align: top
+            }
+
+            .tg .tg-qyya {
+                background-color: #c26743;
+                border-color: inherit;
+                color: #000000;
+                text-align: center;
+                vertical-align: top
+            }
+
+            .tg .tg-wsze {
+                background-color: #90ffff;
+                border-color: inherit;
+                color: #000000;
+                text-align: center;
+                vertical-align: top
+            }
+
+            .tg .tg-0d7m {
+                background-color: #90ffff;
+                border-color: #ffffff;
+                color: #000000;
+                text-align: center;
+                vertical-align: top
+            }
+
+            .tg .tg-9yzt {
+                background-color: #61d366;
+                border-color: inherit;
+                color: #000000;
+                text-align: center;
+                vertical-align: top
+            }
+
+            .tg .tg-bio9 {
+                background-color: #61d366;
+                border-color: inherit;
+                color: #000000;
+                text-align: center;
+                vertical-align: top
+            }
+
+            .tg .tg-ml2k {
+                border-color: inherit;
+                color: antiquewhite;
+                text-align: center;
+                vertical-align: top
+            }
+        </style>
+
+        <table class="tg">
+            <thead>
+                <tr>
+                    <th class="tg-bkz4" rowspan="3"><br>Data Structure</th>
+                    <th class="tg-90ko" colspan="8">Time Compleixty</th>
+                    <th class="tg-90ko" rowspan="3"><br>Space Complexity</th>
+                </tr>
+                <tr>
+                    <td class="tg-90ko">Average<br></td>
+                    <td class="tg-gi7t" colspan="3"></td>
+                    <td class="tg-90ko">Worst<br></td>
+                    <td class="tg-gi7t" colspan="3"></td>
+                </tr>
+                <tr>
+                    <td class="tg-90ko">Access</td>
+                    <td class="tg-90ko">Search</td>
+                    <td class="tg-90ko">Insertion</td>
+                    <td class="tg-90ko">Deletion</td>
+                    <td class="tg-90ko">Access</td>
+                    <td class="tg-90ko">Search</td>
+                    <td class="tg-90ko">Insertion</td>
+                    <td class="tg-90ko">Deletion</td>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="tg-bkz4"><a href="https://en.wikipedia.org/wiki/Array_data_structure" target="_blank"
+                            rel="noopener noreferrer" style="color:#000000">Array</a></td>
+                    <td class="tg-ohfq">Θ(1)</td>
+                    <td class="tg-qyya">Θ(n)</td>
+                    <td class="tg-qyya">Θ(n)</td>
+                    <td class="tg-qyya">Θ(n)</td>
+                    <td class="tg-ohfq">O(1)</td>
+                    <td class="tg-vciu">O(n)</td>
+                    <td class="tg-9ism">O(n)</td>
+                    <td class="tg-9ism">O(n)</td>
+                    <td class="tg-9ism">O(n)</td>
+                </tr>
+                <tr>
+                    <td class="tg-bkz4"><a href="https://en.wikipedia.org/wiki/Stack_(abstract_data_type)"
+                            target="_blank" rel="noopener noreferrer" style="color:#000000">Stack</a></td>
+                    <td class="tg-qyya">Θ(n)</td>
+                    <td class="tg-qyya">Θ(n)</td>
+                    <td class="tg-wsze">Θ(1)</td>
+                    <td class="tg-0d7m">Θ(1)</td>
+                    <td class="tg-qyya">O(n)</td>
+                    <td class="tg-qyya">O(n)</td>
+                    <td class="tg-wsze">O(1)</td>
+                    <td class="tg-wsze">O(1)</td>
+                    <td class="tg-qyya">O(n)</td>
+                </tr>
+                <tr>
+                    <td class="tg-bkz4"><a href="https://en.wikipedia.org/wiki/Queue_(abstract_data_type)"
+                            target="_blank" rel="noopener noreferrer" style="color:#000000">Queue</a></td>
+                    <td class="tg-qyya">Θ(n)</td>
+                    <td class="tg-qyya">Θ(n)</td>
+                    <td class="tg-wsze">Θ(1)</td>
+                    <td class="tg-wsze">Θ(1)</td>
+                    <td class="tg-qyya">O(n)</td>
+                    <td class="tg-qyya">O(n)</td>
+                    <td class="tg-wsze">O(1)</td>
+                    <td class="tg-wsze">O(1)</td>
+                    <td class="tg-qyya">O(n)</td>
+                </tr>
+                <tr>
+                    <td class="tg-bkz4"><a href="https://en.wikipedia.org/wiki/Linked_list#Singly_linked_lists"
+                            target="_blank" rel="noopener noreferrer" style="color:#000000">Singly-Linked List</a></td>
+                    <td class="tg-ywr2">Θ(n)</td>
+                    <td class="tg-qyya">Θ(n)</td>
+                    <td class="tg-wsze">Θ(1)</td>
+                    <td class="tg-wsze">Θ(1)</td>
+                    <td class="tg-qyya">O(n)</td>
+                    <td class="tg-qyya">O(n)</td>
+                    <td class="tg-wsze">O(1)</td>
+                    <td class="tg-wsze">O(1)</td>
+                    <td class="tg-qyya">O(n)</td>
+                </tr>
+                <tr>
+                    <td class="tg-bkz4"><a href="https://en.wikipedia.org/wiki/Doubly_linked_list" target="_blank"
+                            rel="noopener noreferrer" style="color:#000000">Doubly-Linked List</a></td>
+                    <td class="tg-qyya">Θ(n)</td>
+                    <td class="tg-qyya">Θ(n)</td>
+                    <td class="tg-wsze">Θ(1)</td>
+                    <td class="tg-wsze">Θ(1)</td>
+                    <td class="tg-qyya">O(n)</td>
+                    <td class="tg-qyya">O(n)</td>
+                    <td class="tg-wsze">O(1)</td>
+                    <td class="tg-wsze">O(1)</td>
+                    <td class="tg-qyya">O(n)</td>
+                </tr>
+                <tr>
+                    <td class="tg-bkz4"><a href="https://en.wikipedia.org/wiki/Binary_search_tree" target="_blank"
+                            rel="noopener noreferrer" style="color:#000000">Binary Search Tree</a></td>
+                    <td class="tg-9yzt">Θ(log(n))</td>
+                    <td class="tg-bio9">Θ(log(n))</td>
+                    <td class="tg-bio9">Θ(log(n))</td>
+                    <td class="tg-bio9">Θ(log(n))</td>
+                    <td class="tg-qyya">O(n)</td>
+                    <td class="tg-qyya">O(n)</td>
+                    <td class="tg-qyya">O(n)</td>
+                    <td class="tg-qyya">O(n)</td>
+                    <td class="tg-qyya">O(n)</td>
+                </tr>
+                <tr>
+                    <td class="tg-bkz4"><a href="https://en.wikipedia.org/wiki/Hash_table" target="_blank"
+                            rel="noopener noreferrer" style="color:#000000">Hash Table</a></td>
+                    <td class="tg-ml2k">N/A</td>
+                    <td class="tg-wsze">Θ(1)</td>
+                    <td class="tg-wsze">Θ(1)</td>
+                    <td class="tg-wsze">Θ(1)</td>
+                    <td class="tg-ml2k">N/A</td>
+                    <td class="tg-qyya">O(n)</td>
+                    <td class="tg-qyya">O(n)</td>
+                    <td class="tg-qyya">O(n)</td>
+                    <td class="tg-qyya">O(n)</td>
+                </tr>
+                <tr>
+                    <td class="tg-bkz4"><a href="https://en.wikipedia.org/wiki/Skip_list" target="_blank"
+                            rel="noopener noreferrer" style="color:#000000">Skip List</a></td>
+                    <td class="tg-bio9">Θ(log(n))</td>
+                    <td class="tg-bio9">Θ(log(n))</td>
+                    <td class="tg-bio9">Θ(log(n))</td>
+                    <td class="tg-bio9">Θ(log(n))</td>
+                    <td class="tg-qyya">O(n)</td>
+                    <td class="tg-qyya">O(n)</td>
+                    <td class="tg-qyya">O(n)</td>
+                    <td class="tg-qyya">O(n)</td>
+                    <td class="tg-qddy">O(n log(n))</td>
+                </tr>
+                <tr>
+                    <td class="tg-bkz4"><a href="https://en.wikipedia.org/wiki/Cartesian_tree" target="_blank"
+                            rel="noopener noreferrer" style="color:#000000">Cartesian Tree</a></td>
+                    <td class="tg-ml2k">N/A</td>
+                    <td class="tg-bio9">Θ(log(n))</td>
+                    <td class="tg-bio9">Θ(log(n))</td>
+                    <td class="tg-bio9">Θ(log(n))</td>
+                    <td class="tg-ml2k">N/A</td>
+                    <td class="tg-qyya">O(n)</td>
+                    <td class="tg-qyya">O(n)</td>
+                    <td class="tg-qyya">O(n)</td>
+                    <td class="tg-qyya">O(n)</td>
+                </tr>
+                <tr>
+                    <td class="tg-bkz4"><a href="https://en.wikipedia.org/wiki/B-tree" target="_blank"
+                            rel="noopener noreferrer" style="color:#000000">B-Tree</a></td>
+                    <td class="tg-bio9">Θ(log(n))</td>
+                    <td class="tg-bio9">Θ(log(n))</td>
+                    <td class="tg-bio9">Θ(log(n))</td>
+                    <td class="tg-bio9">Θ(log(n))</td>
+                    <td class="tg-bio9">Θ(log(n))</td>
+                    <td class="tg-bio9">Θ(log(n))</td>
+                    <td class="tg-bio9">Θ(log(n))</td>
+                    <td class="tg-bio9">Θ(log(n))</td>
+                    <td class="tg-qyya">O(n)</td>
+                </tr>
+                <tr>
+                    <td class="tg-bkz4"><a href="https://en.wikipedia.org/wiki/Red%E2%80%93black_tree" target="_blank"
+                            rel="noopener noreferrer" style="color:#000000">Red-Black Tree</a></td>
+                    <td class="tg-bio9">Θ(log(n))</td>
+                    <td class="tg-bio9">Θ(log(n))</td>
+                    <td class="tg-bio9">Θ(log(n))</td>
+                    <td class="tg-bio9">Θ(log(n))</td>
+                    <td class="tg-bio9">Θ(log(n))</td>
+                    <td class="tg-bio9">Θ(log(n))</td>
+                    <td class="tg-bio9">Θ(log(n))</td>
+                    <td class="tg-bio9">Θ(log(n))</td>
+                    <td class="tg-qyya">O(n)</td>
+                </tr>
+                <tr>
+                    <td class="tg-bkz4"><a href="https://en.wikipedia.org/wiki/Splay_tree" target="_blank"
+                            rel="noopener noreferrer" style="color:#000000">Splay Tree</a></td>
+                    <td class="tg-ml2k">N/A</td>
+                    <td class="tg-bio9">Θ(log(n))</td>
+                    <td class="tg-bio9">Θ(log(n))</td>
+                    <td class="tg-bio9">Θ(log(n))</td>
+                    <td class="tg-ml2k">N/A</td>
+                    <td class="tg-bio9">Θ(log(n))</td>
+                    <td class="tg-bio9">Θ(log(n))</td>
+                    <td class="tg-bio9">Θ(log(n))</td>
+                    <td class="tg-qyya">O(n)</td>
+                </tr>
+                <tr>
+                    <td class="tg-bkz4"><a href="https://en.wikipedia.org/wiki/AVL_tree" target="_blank"
+                            rel="noopener noreferrer" style="color:#000000">AVL Tree</a></td>
+                    <td class="tg-bio9">Θ(log(n))</td>
+                    <td class="tg-bio9">Θ(log(n))</td>
+                    <td class="tg-bio9">Θ(log(n))</td>
+                    <td class="tg-bio9">Θ(log(n))</td>
+                    <td class="tg-bio9">Θ(log(n))</td>
+                    <td class="tg-bio9">Θ(log(n))</td>
+                    <td class="tg-bio9">Θ(log(n))</td>
+                    <td class="tg-bio9">Θ(log(n))</td>
+                    <td class="tg-qyya">O(n)</td>
+                </tr>
+                <tr>
+                    <td class="tg-bkz4"><a href="https://en.wikipedia.org/wiki/K-d_tree" target="_blank"
+                            rel="noopener noreferrer" style="color:#000000">KD Tree</a></td>
+                    <td class="tg-bio9">Θ(log(n))</td>
+                    <td class="tg-bio9">Θ(log(n))</td>
+                    <td class="tg-bio9">Θ(log(n))</td>
+                    <td class="tg-bio9">Θ(log(n))</td>
+                    <td class="tg-qyya">O(n)</td>
+                    <td class="tg-qyya">O(n)</td>
+                    <td class="tg-qyya">O(n)</td>
+                    <td class="tg-qyya">O(n)</td>
+                    <td class="tg-qyya">O(n)</td>
+                </tr>
+            </tbody>
+        </table>
+    </center>
+
+
+
+
+    <!---->
+    <p><a href="#top">Back to top</a></p>
+    <!---->
+
+</body>
+</html>

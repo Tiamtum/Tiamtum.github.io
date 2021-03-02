@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <link rel="stylesheet" href="../../resources/css/styles.css">
+    <style>
+        table {
+            border: 1px solid goldenrod;
+            font-family: "RS";
+            color: antiquewhite;
+            font-size: x-large;
+            width: 60%;
+            text-align: center;
+        }
+
+        td {
+            border: 1px solid goldenrod;
+
+        }
+
+        tr {
+            border: 1px solid goldenrod;
+            color: white;
+        }
+
+        th {
+            background-color: yellow;
+            color: black;
+        }
+
+        b {
+            color: #DF9DA9;
+        }
+
+        i {
+            color: #DF9DA9;
+        }
+    </style>
+
+    <script>
+
+        function convertNumber() {
+
+            if (document.getElementById("b1").checked) {
+                if (document.getElementById("d2").checked) {
+                    var x = parseInt(document.getElementById('userNum').value, 2)
+                    var y = x.toString(10)
+                    document.getElementById("convertedUserNum").value = y
+                }
+                if (document.getElementById("h2").checked) {
+                    var x = parseInt(document.getElementById('userNum').value, 2)
+                    var y = x.toString(16)
+                    document.getElementById("convertedUserNum").value = y
+                }
+                if (document.getElementById("o2").checked) {
+                    var x = parseInt(document.getElementById('userNum').value, 2)
+                    var y = x.toString(8)
+                    document.getElementById("convertedUserNum").value = y
+                }
+            }
+
+            if (document.getElementById("d1").checked) {
+                if (document.getElementById("b2").checked) {
+                    var x = parseInt(document.getElementById('userNum').value, 10)
+                    var y = x.toString(2)
+                    document.getElementById("convertedUserNum").value = y
+                }
+                if (document.getElementById("h2").checked) {
+                    var x = parseInt(document.getElementById('userNum').value, 10)
+                    var y = x.toString(16)
+                    document.getElementById("convertedUserNum").value = y
+                }
+                if (document.getElementById("o2").checked) {
+                    var x = parseInt(document.getElementById('userNum').value, 10)
+                    var y = x.toString(8)
+                    document.getElementById("convertedUserNum").value = y
+                }
+            }
+
+            if (document.getElementById("h1").checked) {
+                if (document.getElementById("b2").checked) {
+                    var x = parseInt(document.getElementById('userNum').value, 16)
+                    var y = x.toString(2)
+                    document.getElementById("convertedUserNum").value = y
+                }
+                if (document.getElementById("d2").checked) {
+                    var x = parseInt(document.getElementById('userNum').value, 16)
+                    var y = x.toString(10)
+                    document.getElementById("convertedUserNum").value = y
+                }
+                if (document.getElementById("o2").checked) {
+                    var x = parseInt(document.getElementById('userNum').value, 16)
+                    var y = x.toString(8)
+                    document.getElementById("convertedUserNum").value = y
+                }
+            }
+
+            if (document.getElementById("o1").checked) {
+                if (document.getElementById("b2").checked) {
+                    var x = parseInt(document.getElementById('userNum').value, 8)
+                    var y = x.toString(2)
+                    document.getElementById("convertedUserNum").value = y
+                }
+                if (document.getElementById("d2").checked) {
+                    var x = parseInt(document.getElementById('userNum').value, 8)
+                    var y = x.toString(10)
+                    document.getElementById("convertedUserNum").value = y
+                }
+                if (document.getElementById("h2").checked) {
+                    var x = parseInt(document.getElementById('userNum').value, 8)
+                    var y = x.toString(16)
+                    document.getElementById("convertedUserNum").value = y
+                }
+            }
+
+        }
+
+    </script>
+
+</head>
+<body background="../../resources/css/stars.gif">
+
+    <a href="../CS_contents.html">Return to contents.</a>
+
+    <h1 id="s1">1. Computers and Number Systems</h1>
+
+    <ul>
+        <li><a href="#ss1_1">1.1 Conversions </a></li>
+        <li><a href="#ss1_2">1.2 Signed, Unsigned, One's/Two's Complement Binary Numbers </a></li>
+    </ul>
+
+    <h2 id="ss1_1">1.1 Conversions</h2>
+
+    <h2>BIN to HEX</h2>
+    <p>Group the binary number into groups of four digits and match them with the corresponding hexadecimal value. For
+        example:<br>
+        <img src="../../resources/latex/bintohex.gif">
+    </p>
+    <h2>HEX to BIN</h2>
+    <p>Write the corresponding binary number for each digit of the hexadecimal number. For example:<br> <img
+            src="../../resources/latex/hextobin.gif">
+    </p>
+    <h2>HEX/BIN to DEC</h2>
+    <p>The corresponding decimal number to a binary or hexadecimal number will be the sum of their digits multiplied by
+        powers of 2 for binary
+        , and 16 for hexadecimal. The exponent depends on what position the digit is in. By convention, the zeroth power
+        is the right most. <br>
+        For example:<br>
+        <img src="../../resources/latex/bintodec.gif"> <br>
+        <img src="../../resources/latex/hextodec.gif"> <br>
+
+    </p><br>
+
+    <h2>Conversion Tool</h2>
+    <p>Select the base of your number in the top row and the base you want to convert it to in the bottom row.</p>
+    <center>
+        <form>
+            <label for="userNum" style="color:antiquewhite;">Enter Number:</label><br>
+            <input type="text" id="userNum" name="userNum"><br>
+            <table>
+                <form action="">
+                    <td>
+                        <input type="radio" name="number" value="bin" id="b1"> BIN<br>
+                    </td>
+                    <td>
+                        <input type="radio" name="number" value="dec" id="d1"> DEC<br>
+                    </td>
+                    <td>
+                        <input type="radio" name="number" value="hex" id="h1"> HEX<br>
+                    </td>
+                    <td>
+                        <input type="radio" name="number" value="oct" id="o1"> OCT<br>
+                    </td>
+                </form>
+            </table>
+
+            <table>
+                <form action="">
+                    <td>
+                        <input type="radio" name="number" value="bin" id="b2"> BIN<br>
+                    </td>
+                    <td>
+                        <input type="radio" name="number" value="dec" id="d2"> DEC<br>
+                    </td>
+                    <td>
+                        <input type="radio" name="number" value="hex" id="h2"> HEX<br>
+                    </td>
+                    <td>
+                        <input type="radio" name="number" value="oct" id="o2"> OCT<br>
+                    </td>
+                </form>
+            </table>
+
+            <button name="convert" type="button" onclick="convertNumber()"> Convert </button> </br>
+
+
+            <input type="text" id="convertedUserNum" name="convertedUserNum">
+        </form>
+    </center>
+
+    <!---->
+    <p><a href="#top">Back to top</a></p>
+    <!---->
+
+    <h2 id="ss1_2">1.2 Signed, Unsigned, One's/Two's Complement Binary Numbers</h1>
+
+        <p>. In computer systems, there are several different techniques used to represent numbers. The three techniques
+            consider here are Sign Magnitude,
+            Two's Complement, and One's Complement. </p>
+        <ul>
+            <li>
+                <h3>Sign Magnitude Representation</h3>
+            </li>
+            <p>In signed magnitude, the most significant bit acts as the sign. The max range of an n-bit number
+                using sign magnitude is between <img src="../../resources/latex/minbound1.gif" alt="-(2^{n-1}-1)"> and
+                <img src="../../resources/latex/maxbound1.gif" alt="(2^{n-1}-1)">. Note that,
+                there are two representations for zero with sign magnitude, for example 10000000 and 00000000. <br><br>
+                To make this representation:
+            <ol>
+                <li>
+                    <p>Convert the absolute value of the number to binary.</p>
+                </li>
+                <li>
+                    <p>Pad bits if needed and use the MSb for the sign: 0 for positive, 1 for negative.</p>
+                </li>
+            </ol>
+            <li>
+                <h3>One's Complement Representation</h3>
+            </li>
+            <p>A ones' complement system or ones' complement arithmetic is a system in which negative numbers
+                are represented by the inverse of the binary representations of their corresponding positive numbers.
+                The max range
+                of an n-bit number using one's complement is between <img src="../../resources/latex/minbound2.gif"
+                    alt="-(2^{n-1}-1)"> and <img src="../../resources/latex/maxbound2.gif" alt="(2^{n-1}-1)">.
+                Note that like sign magnitude representation, there is also two ways to represent zero with one's
+                complement, 1111 and 0000 for example.
+                <br><br> To make this representation:
+            </p>
+            <ol>
+                <li>
+                    <p>Convert the absolute value of the number to binary and pad 0's if needed.</p>
+                </li>
+                <li>
+                    <p>If the number is greater than zero, we are finished. Else:</p>
+                </li>
+                <li>
+                    <p>Complement the binary number.</p>
+                </li>
+            </ol>
+
+            <li>
+                <h3>Two's Complement Representation</h3>
+            </li>
+            <p>Two's complement is the most common method of representing signed integers on computers, and more
+                generally, fixed point binary values.
+                Compared to other systems for representing signed numbers (e.g., ones' complement), two's complement has
+                the advantage that the fundamental arithmetic operations of addition, subtraction, and multiplication
+                are identical to those for unsigned binary numbers (as long as the inputs are represented
+                in the same number of bits as the output, and any overflow beyond those bits is discarded from the
+                result). This property makes the system simpler to implement,
+                especially for higher-precision arithmetic. Unlike ones' complement systems, two's complement has no
+                representation for negative zero, and thus does not suffer
+                from its associated difficulties. The max range of an n-bit number using two's complement is between
+                <img src="../../resources/latex/minbound3.gif" alt="-(2^{n-1})"> and <img
+                    src="../resources/latex/maxbound3.gif" alt="(2^{n-1}-1)">
+                <br><br> To make this representation:
+            </p>
+            <ol>
+                <li>
+                    <p>Find the one's complement representation of the number.</p>
+                </li>
+                <li>
+                    <p>If the number is negative, add one to the result of the one's complement.</p>
+                </li>
+            </ol>
+        </ul>
+
+        <h3><b><i>Example: </i></b> Find the 8-bit sign magnitude, one's and two's complement representation of the
+            numbers 42 and -13. </h3>
+
+        <p>
+            42 in binary is 101010. Padding to 8-bits and using the MSb for sign, we have 00101010 as the sign magnitude
+            representation.<br>
+            Since 42 is positive, the one's and two's complement representation will also be 00101010.<br><br>
+            13 in binary is 1101. Padding to 8-bits and using MSb for sign, we have 10001101 as the sign magnitude
+            representation. <br>
+            Since -13 is negative, the one's complement will be (00001101)^c = 11110010. The two's complement will be
+            11110010+1 = 11110011.
+        </p>
+
+        <!---->
+        <p><a href="#top">Back to top</a></p>
+        <!---->
+</body>
+</html>
