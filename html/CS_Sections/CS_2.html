@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 
     <link rel="stylesheet" href="../../resources/css/styles.css">
@@ -40,630 +41,926 @@
 </head>
 
 <body background="../../resources/css/stars.gif">
-    <a href="../CS_contents.html">Return to contents.</a>
-    <h1 id="s2">2. Circuits</h1>
-    <ul>
-        <li><a href="#ss2_1">2.1 Boolean Algebra and Truth Tables </a></li>
-        <li><a href="#ss2_2">2.2 Transistors and Logic Gates </a></li>
+    <div><!--Contents-->
+
+        <a href="../CS_contents.html">Return to contents.</a>
+        <h1 id="s2">2. Circuits</h1>
         <ul>
-            <li><a href="#ss2_2_1">2.2.1 Transistors</a></li>
-            <li><a href="#ss2_2_2">2.2.2 Logic Gates</a></li>
-            <li><a href="#ss2_2_3">2.2.3 Combinational Circuits - Multiplexors, Demultiplexers, and Decoders</a></li>
-            </li>
+            <li><a href="#ss2_1">2.1 Boolean Algebra and Truth Tables </a></li>
+            <li><a href="#ss2_2">2.2 Transistors and Logic Gates </a></li>
+            <ul>
+                <li><a href="#ss2_2_1">2.2.1 Transistors</a></li>
+                <li><a href="#ss2_2_2">2.2.2 Logic Gates</a></li>
+                <li><a href="#ss2_2_3">2.2.3 Combinational Circuits - Multiplexors, Demultiplexers, and Decoders</a>
+                </li>
+                </li>
+            </ul>
+            <li><a href="#ss2_3">2.3 Sum of Products and Product of Sums </a></li>
+            <li><a href="#ss2_4">2.4 Karnaugh Maps </a></li>
+            <li><a href="#ss2_5">2.5 Combinational circuits </a></li>
+            <li><a href="#ss2_6">2.6 Sequential Logic Design </a></li>
+            <ul>
+                <li><a href="#ss2_6_1">2.6.1 The SR-Latch </a></li>
+                <li><a href="#ss2_6_2">2.6.2 The D-Latch </a></li>
+                <li><a href="#ss2_6_3">2.6.3 The D Flip-Flop </a></li>
+                <ul>
+                    <li><a href="#ss2_6_3_1">2.6.3.1 The Enabled Flip-Flop </a></li>
+                    <li><a href="#ss2_6_3_2">2.6.3.2 The Resettable Flip-Flop </a></li>
+                </ul>
+            </ul>
+            <li><a href="#ss2_7">2.7 Synchronous Logic Design</a></li>
         </ul>
-        <li><a href="#ss2_3">2.3 Sum of Products and Product of Sums </a></li>
-        <li><a href="#ss2_4">2.4 Karnaugh Maps </a></li>
-        <li><a href="#ss2_5">2.5 Combinational circuits </a></li>
-    </ul>
+    </div>
 
-    <h2 id="ss2_1">2.1 Boolean Algebra and Truth Tables</h2>
+    <div><!--2.1 Boolean Algebra and Truth Tables-->
 
-    <h3><b><i>Note: </i></b> For the purposes of this page,
-        <b>~</b> or <b>'</b> will represent NOT, <b>&</b> or variables next to each other will represent AND,
-        and <b>|</b> or <b>+</b> will represent OR.
-    </h3>
+        <h2 id="ss2_1">2.1 Boolean Algebra and Truth Tables</h2>
 
-    <p>A <b>truth table</b> consists of true/false values for Boolean variables. One row per each possible
-        combination of arguments. Each row gives the unique function value for specified arguements.
-        For N inputs there are 2^N rows.<br>
-        The number of boolean functions in N-variables is 2^(2^N).</p>
+        <h3><b><i>Note: </i></b> For the purposes of this page,
+            <b>~</b> or <b>'</b> will represent NOT, <b>&</b> or variables next to each other will represent AND,
+            and <b>|</b> or <b>+</b> will represent OR.
+        </h3>
 
-    <!---->
-    <p><a href="#top">Back to top</a></p>
-    <!---->
-    <h2 id="ss2_2">2.2 Transistors and Logic Gates</h2>
+        <p>A <b>truth table</b> consists of true/false values for Boolean variables. One row per each possible
+            combination of arguments. Each row gives the unique function value for specified arguements.
+            For N inputs there are 2^N rows.<br>
+            The number of boolean functions in N-variables is 2^(2^N).</p>
 
-    <h2 id="ss2_2_1">2.2.1 Transistors</h2>
-    <p><b>Transistors</b> are electrically controlled switches that turn ON or OFF when a voltage or current is applied
-        to
-        a control terminal. There are two main types of transistors:<br>
-    <ol>
-        <li>Bipolar junction transistors.</li>
-        <li>Metal-Oxide-Semiconductor Field Effect Transistors (MOSFETs)</li>
-    </ol>
-    </p>
-    <p>We will primarily focus on MOSFETs. For the inner details of how such a transistor is made, refer to <a
-            href="https://en.wikipedia.org/wiki/MOSFET">here</a> or section
-        1.7 of <a href="https://www.amazon.ca/Digital-Design-Computer-Architecture-Harris/dp/0123944244">this</a> text
-        (free to obtain from various sources).<br>
+        <!---->
+        <p><a href="#top">Back to top</a></p>
+        <!---->
+    </div>
 
-        There are two flavors of MOSFET: <b>nMOS</b> and <b>pMOS</b>. The gist of their functionality is outlined in
-        this diagram:</p>
+    <div><!--2.2 Transistors and Logic Gates-->
 
-    <center>
+        <h2 id="ss2_2">2.2 Transistors and Logic Gates</h2>
 
-        <img src="../../resources/images/transparencies/nmospmos.png" width="650" height="400" alt=nmospmos.png">
+        <h2 id="ss2_2_1">2.2.1 Transistors</h2>
+        <p><b>Transistors</b> are electrically controlled switches that turn ON or OFF when a voltage or current is
+            applied
+            to
+            a control terminal. There are two main types of transistors:<br>
+        <ol>
+            <li>Bipolar junction transistors.</li>
+            <li>Metal-Oxide-Semiconductor Field Effect Transistors (MOSFETs)</li>
+        </ol>
+        </p>
+        <p>We will primarily focus on MOSFETs. For the inner details of how such a transistor is made, refer to <a
+                href="https://en.wikipedia.org/wiki/MOSFET">here</a> or section
+            1.7 of <a href="https://www.amazon.ca/Digital-Design-Computer-Architecture-Harris/dp/0123944244">this</a>
+            text
+            (free to obtain from various sources).<br>
 
-    </center>
-    <p>
-        The voltage at the gate (g) regulates the flow of current between the source (s) and drain (d).
-        nMOS transistors are OFF when the gate is 0 and ON when the gate is 1. pMOS transistors are just the opposite:
-        ON when the gate is 0 and OFF when
-        the gate is 1.<br></p>
+            There are two flavors of MOSFET: <b>nMOS</b> and <b>pMOS</b>. The gist of their functionality is outlined in
+            this diagram:</p>
 
-    <p>When designing schematics using MOSFETs, the following convention is used:</p>
-    <center>
+        <center>
 
-        <img src="../../resources/images/transparencies/generalmosfetform.png" width="650" height="400"
-            alt=generalmosfetform.png">
+            <img src="../../resources/images/transparencies/nmospmos.png" width="650" height="400" alt=nmospmos.png">
 
-    </center>
+        </center>
+        <p>
+            The voltage at the gate (g) regulates the flow of current between the source (s) and drain (d).
+            nMOS transistors are OFF when the gate is 0 and ON when the gate is 1. pMOS transistors are just the
+            opposite:
+            ON when the gate is 0 and OFF when
+            the gate is 1.<br></p>
 
-    <h3><b><i>Example: </i></b> NOT Gate Schematic </h3>
-    <center>
+        <p>When designing schematics using MOSFETs, the following convention is used:</p>
+        <center>
 
-        <img src="../../resources/images/transparencies/not_sch.png" width="650" height="400" alt=not_sch.png.>
+            <img src="../../resources/images/transparencies/generalmosfetform.png" width="650" height="400"
+                alt=generalmosfetform.png">
 
-    </center>
-    <h3><b><i>Example: </i></b> Two Input NAND Gate Schematic </h3>
-    <center>
+        </center>
 
-        <img src="../../resources/images/transparencies/twoinpnand_sch.png" width="650" height="400"
-            alt="twoinpnand_sch.png">
+        <h3><b><i>Example: </i></b> NOT Gate Schematic </h3>
+        <center>
 
-    </center>
+            <img src="../../resources/images/transparencies/not_sch.png" width="650" height="400" alt=not_sch.png.>
 
-    <h3><b><i>Example: </i></b> Two Input NOR Gate Schematic </h3>
-    <center>
+        </center>
+        <h3><b><i>Example: </i></b> Two Input NAND Gate Schematic </h3>
+        <center>
 
-        <img src="../../resources/images/transparencies/twoinpnor_sch.png" width="650" height="400"
-            alt="twoinpnor_sch.png">
+            <img src="../../resources/images/transparencies/twoinpnand_sch.png" width="650" height="400"
+                alt="twoinpnand_sch.png">
 
-    </center>
+        </center>
 
-    <p>In CMOS, <b><i>all</i></b> other gates are constructed via NOT, NOR, and NAND gates. The number of transistors
-        per gate can therefore be calculated:
-        6 for AND, 6 for OR, 24 for XOR (4 AND gates), etc. </p>
+        <h3><b><i>Example: </i></b> Two Input NOR Gate Schematic </h3>
+        <center>
 
-    <!---->
-    <p><a href="#top">Back to top</a></p>
-    <!---->
-    <h2 id="ss2_2_2">2.2.2 Logic Gates</h2>
+            <img src="../../resources/images/transparencies/twoinpnor_sch.png" width="650" height="400"
+                alt="twoinpnor_sch.png">
 
-    <center>
+        </center>
 
-        <img src="../../resources/images/transparencies/logicgatesymbols.png" width="650" height="400"
-            alt="logicgatesymbols.png">
+        <p>In CMOS, <b><i>all</i></b> other gates are constructed via NOT, NOR, and NAND gates. The number of
+            transistors
+            per gate can therefore be calculated:
+            6 for AND, 6 for OR, 24 for XOR (4 AND gates), etc. </p>
 
+        <!---->
+        <p><a href="#top">Back to top</a></p>
+        <!---->
+        <h2 id="ss2_2_2">2.2.2 Logic Gates</h2>
 
+        <center>
 
-        <style type="text/css">
-            .tg .tg-baqh {
-                text-align: center;
-                vertical-align: top
-            }
-
-            .tg .tg-c3ow {
-                border-color: inherit;
-                text-align: center;
-                vertical-align: top
-            }
-
-            .tg .tg-0lax {
-                text-align: left;
-                vertical-align: top
-            }
-        </style>
-        <table class="tg">
-            <thead>
-                <tr>
-                    <th class="tg-baqh" colspan="3" rowspan="2">Inputs</th>
-                    <th class="tg-baqh" colspan="8" rowspan="2">Logic Gates</th>
-                </tr>
-                <tr>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td class="tg-baqh">X</td>
-                    <td class="tg-baqh">Y</td>
-                    <td class="tg-0lax" rowspan="5"></td>
-                    <td class="tg-baqh">OR</td>
-                    <td class="tg-baqh">NOR</td>
-                    <td class="tg-baqh">AND</td>
-                    <td class="tg-baqh">NAND</td>
-                    <td class="tg-baqh">XOR</td>
-                    <td class="tg-baqh">XNOR</td>
-                    <td class="tg-baqh">BUFF*</td>
-                    <td class="tg-baqh">NOT</td>
-                </tr>
-                <tr>
-                    <td class="tg-c3ow">0</td>
-                    <td class="tg-c3ow">0</td>
-                    <td class="tg-c3ow">0</td>
-                    <td class="tg-c3ow">1</td>
-                    <td class="tg-c3ow">0</td>
-                    <td class="tg-c3ow">1</td>
-                    <td class="tg-c3ow">0</td>
-                    <td class="tg-c3ow">1</td>
-                    <td class="tg-baqh">0</td>
-                    <td class="tg-baqh">1</td>
-                </tr>
-                <tr>
-                    <td class="tg-c3ow">0</td>
-                    <td class="tg-c3ow">1</td>
-                    <td class="tg-c3ow">1</td>
-                    <td class="tg-c3ow">0</td>
-                    <td class="tg-c3ow">0</td>
-                    <td class="tg-c3ow">1</td>
-                    <td class="tg-c3ow">1</td>
-                    <td class="tg-c3ow">0</td>
-                    <td class="tg-baqh">0</td>
-                    <td class="tg-baqh">1</td>
-                </tr>
-                <tr>
-                    <td class="tg-c3ow">1</td>
-                    <td class="tg-c3ow">0</td>
-                    <td class="tg-c3ow">1</td>
-                    <td class="tg-c3ow">0</td>
-                    <td class="tg-c3ow">0</td>
-                    <td class="tg-c3ow">1</td>
-                    <td class="tg-c3ow">1</td>
-                    <td class="tg-c3ow">0</td>
-                    <td class="tg-baqh">1</td>
-                    <td class="tg-baqh">0</td>
-                </tr>
-                <tr>
-                    <td class="tg-baqh">1</td>
-                    <td class="tg-baqh">1</td>
-                    <td class="tg-baqh">1</td>
-                    <td class="tg-baqh">0</td>
-                    <td class="tg-baqh">1</td>
-                    <td class="tg-baqh">0</td>
-                    <td class="tg-baqh">0</td>
-                    <td class="tg-baqh">1</td>
-                    <td class="tg-baqh">1</td>
-                    <td class="tg-baqh">0</td>
-                </tr>
-            </tbody>
-        </table>
-
-    </center>
-
-    <p>*From the logical point of view, a buffer is no different from a wire, so
-        it might seem useless. However, from the analog point of view, the buffer
-        might have desirable characteristics such as the ability to deliver large
-        amounts of current to a motor or the ability to quickly send its output
-        to many gates. This is an example of why we need to consider multiple
-        levels of abstraction to fully understand a system; the digital abstraction
-        hides the real purpose of a buffer.</p>
-
-    <h2 id="ss2_2_3">2.2.3 Combinational Circuits - Multiplexors, Demultiplexers, and Decoders</h2>
-    <p>From logic circuits, one can make more elaborate circuits - so called <b>combinational circuits</b>.</p>
-    <!---->
-    <p><a href="#top">Back to top</a></p>
-    <!---->
-    <h2 id="ss2_3">2.3 Sum of Products and Product of Sums</h2>
-
-    <p>Boolean variables and their complements are sometimes refered to as
-        <b>literals</b>. The AND of one or more literals is called a
-        <b>product</b> or <b>implicant</b>. A <b>minterm</b> is a
-        product involving <i>all</i> implicants for the function (i.e.,
-        if the function is in N-inputs, an implicant will consist
-        of N literals). Similarly, the OR of literals is often called
-        a <b>sum</b> and a <b>maxterm</b> is a sum involving <i>all</i>
-        implicants for the function.
-    </p>
-
-    <p>
-        The SOP form can be a succinct way of describing a circuit via
-        Boolean expressions. To form the SOP from a truth table,
-        simply AND the variables together that yield true output and OR all these expressions together.<br>
-        The dual notion of SOP is POS. To form the POS, simply OR the opposite of the variables together
-        that yield false output and AND all these expressions together.<br>
-        Using a truth table, one can easily convert between the two forms.
-
-    </p>
-
-    <h3><b><i>Example: </i></b> Find the SOP and POS forms
-        from the truth table below. Describe the max and min terms.</h3>
-
-    <center>
-        <table>
-            <thead>
-                <tr>
-                    <th>a</th>
-                    <th>b</th>
-                    <th>c</th>
-                    <th>F</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>0</td>
-                    <td>0</td>
-                    <td>0</td>
-                    <td>0</td>
-                </tr>
-                <tr>
-                    <td>0</td>
-                    <td>0</td>
-                    <td>1</td>
-                    <td>1</td>
-                </tr>
-                <tr>
-                    <td>0<br></td>
-                    <td>1</td>
-                    <td>0</td>
-                    <td>0</td>
-                </tr>
-                <tr>
-                    <td>0</td>
-                    <td>1</td>
-                    <td>1</td>
-                    <td>0</td>
-                </tr>
-                <tr>
-                    <td>1</td>
-                    <td>0</td>
-                    <td>0</td>
-                    <td>1</td>
-                </tr>
-                <tr>
-                    <td>1</td>
-                    <td>0</td>
-                    <td>1</td>
-                    <td>1</td>
-                </tr>
-                <tr>
-                    <td>1</td>
-                    <td>1</td>
-                    <td>0</td>
-                    <td>0</td>
-                </tr>
-                <tr>
-                    <td>1</td>
-                    <td>1</td>
-                    <td>1</td>
-                    <td>0</td>
-                </tr>
-            </tbody>
-        </table>
-    </center>
-
-    <p> Looking at the rows
-        that output 1, we can describe the SOP form as:<br>
-        ( ~a & ~b & c ) | ( a & ~b & ~c ) | ( a & ~b & c )
-        <br>
-        Looking at the rows that output 0, we can describe the POS
-        form as: <br>
-        ( a | b | c ) & ( a | ~b | c ) & ( a | ~b | ~c ) & ( ~a | ~b | c ) & ( ~a | ~b | ~c )<br>
-        The minterms can be described as Sum(1,4,5) and the maxterms can be
-        described as Prod(0,2,3,6,7).
-    </p>
-
-    <h3><b><i>Note: </i></b> Though SOP/POS is succinct, is usually
-        does not provide a minimal expression.</h3>
-    <p>An implicant is called <b>prime</b> if it cannot be combined with
-        any other implicants in the equation to form a new implicant with
-        fewer literals. The implicants in a minimal equation <i>must</i>
-        all be prime implicants. </p>
-
-    <h3><b><i>Example: </i></b> Minimize a'b'c' + ab'c' + ab'c. </h3>
-    <p>Using Boolean algebra we can write:<br>
-        a'b'c' + ab'c' + ab'c </br>
-        = a'b'c' + ab'c' <b>+ ab'c'</b> + ab'c (<i>idempotency</i>)<br>
-        = <b>b'c'</b> ( a + a ) + <b>ab'</b> ( c' + c ) (<i>distributivity</i>)</br>
-        = ( b'c' & <b>1</b> ) + ( ab' & <b>1</b> ) (<i>complements</i>)<br>
-        = b'c' + ab' (<i>identity</i>)<br>
-
-        It may seem uninituitive to use idempotency, but doing this naively
-        might yield an expression like a'b'c'+ac', which is not as minimal as
-        it could be. K-maps help to make this process more formal.
-    </p>
-    <!---->
-    <p><a href="#top">Back to top</a></p>
-    <!---->
-    <h2 id="ss2_4">2.4 Karnaugh Maps</h2>
-
-    <p><b>Karnaugh maps</b> or <b>K-maps</b> are a graphical grid method
-        for simplifying Boolean equations. When drawing a K-map, note that
-        adjacent cells differ by only a single change in digit.</p>
-
-    <h3><b><i>Example: </i></b> Minimize a'b'c' + ab'c' + ab'c with a K-map. </h3>
-
-    <p>We can draw a K-map for this expression as such:</p>
-
-    <center>
-        <table>
-            <thead>
-                <tr>
-                    <th>a \ bc<br></th>
-                    <th>00</th>
-                    <th>01</th>
-                    <th>11</th>
-                    <th>10</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td style=background-color:yellow;color:black;>0</td>
-                    <td>1</td>
-                    <td>0</td>
-                    <td>0</td>
-                    <td>0</td>
-                </tr>
-                <tr>
-                    <td style=background-color:yellow;color:black;>1</td>
-                    <td>1</td>
-                    <td>1</td>
-                    <td>0</td>
-                    <td>0</td>
-                </tr>
-            </tbody>
-        </table>
-
-    </center>
-
-    <p>The 1's in the grid represent the minterms described in the given equation. We
-        then group the 1's together in groups of no more than powers of 2.
-        Notice, in the K-map above we can make two such groups: the group at coordinates
-        (0,00),(1,00) and the group (1,00),(1,01). For now, let the groups
-        be represented via super scripts:
-
-    </p>
-
-    <center>
-        <table>
-            <thead>
-                <tr>
-                    <th>a \ bc<br></th>
-                    <th>00</th>
-                    <th>01</th>
-                    <th>11</th>
-                    <th>10</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td style=background-color:yellow;color:black;>0</td>
-                    <td>1<sup>(1)</sup></td>
-                    <td>0</td>
-                    <td>0</td>
-                    <td>0</td>
-                </tr>
-                <tr>
-                    <td style=background-color:yellow;color:black;>1</td>
-                    <td>1<sup>(1)</sup><sup>(2)</sup></td>
-                    <td>1<sup>(2)</sup></td>
-                    <td>0</td>
-                    <td>0</td>
-                </tr>
-            </tbody>
-        </table>
-
-    </center>
-    <p>We can analyize this now to see that in the (1) group, the 'a' variable
-        is invariant to the behaviour of the logic. Hence, we extract the prime
-        implicant: b'c'. Likewise in the (2) group we see that 'c' is invariant and Hence
-        we extract the prime implicant ab'. So we arrive at our minimial equation: b'c'+ab'. </p>
-
-    <h3><b><i>Example: </i></b> Provide the prime implicants for the following truth table: </h3>
-    <center>
-        <table>
-            <thead>
-                <tr>
-                    <th>x</th>
-                    <th>y</th>
-                    <th>z</th>
-                    <th>F</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>0</td>
-                    <td>0</td>
-                    <td>0</td>
-                    <td>0</td>
-                </tr>
-                <tr>
-                    <td>0</td>
-                    <td>0</td>
-                    <td>1</td>
-                    <td>1</td>
-                </tr>
-                <tr>
-                    <td>0</td>
-                    <td>1</td>
-                    <td>0</td>
-                    <td>1</td>
-                </tr>
-                <tr>
-                    <td>0</td>
-                    <td>1</td>
-                    <td>1</td>
-                    <td>1</td>
-                </tr>
-                <tr>
-                    <td>1</td>
-                    <td>0</td>
-                    <td>0</td>
-                    <td>1</td>
-                </tr>
-                <tr>
-                    <td>1</td>
-                    <td>0</td>
-                    <td>1</td>
-                    <td>0</td>
-                </tr>
-                <tr>
-                    <td>1</td>
-                    <td>1</td>
-                    <td>0</td>
-                    <td>1</td>
-                </tr>
-                <tr>
-                    <td>1</td>
-                    <td>1</td>
-                    <td>1</td>
-                    <td>0<br></td>
-                </tr>
-            </tbody>
-        </table>
-    </center>
-    <p>We can draw the following K-map for this truth table by plotting the minterms 1,2,3,4, and 6</p>:
-
-    <center>
-        <table>
-            <thead>
-                <tr>
-                    <th>x \ yz</th>
-                    <th>00</th>
-                    <th>01</th>
-                    <th>11</th>
-                    <th>10</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td style=background-color:yellow;color:black;>0</td>
-                    <td>0</td>
-                    <td>1<sup>(1)</sup></td>
-                    <td>1<sup>(1)</sup><sup>(2)</sup></td>
-                    <td>1<sup>(2)</sup><sup>(3)</sup></td>
-                </tr>
-                <tr>
-                    <td style=background-color:yellow;color:black;>1</td>
-                    <td>1<sup>(4)</sup></td>
-                    <td>0</td>
-                    <td>0</td>
-                    <td>1<sup>(3)</sup><sup>(4)</sup></td>
-                </tr>
-            </tbody>
-        </table>
+            <img src="../../resources/images/transparencies/logicgatesymbols.png" width="650" height="400"
+                alt="logicgatesymbols.png">
 
 
-    </center>
 
-    <p>Note the (4) group how it wraps around. Looking at the groups, we can write a minimal expression as:
-        x'z + x'y + yz' + xz' . The prime implicants of this table therefore are
-        x'z , x'y , yz' , and xz'.</p>
+            <style type="text/css">
+                .tg .tg-baqh {
+                    text-align: center;
+                    vertical-align: top
+                }
 
-    <h3><b><i>Example: </i></b> Write the minimal expression from the following K-table. </h3>
+                .tg .tg-c3ow {
+                    border-color: inherit;
+                    text-align: center;
+                    vertical-align: top
+                }
 
-    <center>
-        <table>
-            <thead>
-                <tr>
-                    <th>xy \ zw</th>
-                    <th>00</th>
-                    <th>01</th>
-                    <th>11</th>
-                    <th>10</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td style=background-color:yellow;color:black;>00</td>
-                    <td>1</td>
-                    <td>0<br></td>
-                    <td>0<br></td>
-                    <td>1<br></td>
-                </tr>
-                <tr>
-                    <td style=background-color:yellow;color:black;>01</td>
-                    <td>0<br></td>
-                    <td>1</td>
-                    <td>0</td>
-                    <td>1</td>
-                </tr>
-                <tr>
-                    <td style=background-color:yellow;color:black;>11</td>
-                    <td>1</td>
-                    <td>1</td>
-                    <td>0</td>
-                    <td>0</td>
-                </tr>
-                <tr>
-                    <td style=background-color:yellow;color:black;>10</td>
-                    <td>1</td>
-                    <td>1</td>
-                    <td>0</td>
-                    <td>0</td>
-                </tr>
-            </tbody>
-        </table>
-    </center>
+                .tg .tg-0lax {
+                    text-align: left;
+                    vertical-align: top
+                }
+            </style>
+            <table class="tg">
+                <thead>
+                    <tr>
+                        <th class="tg-baqh" colspan="3" rowspan="2">Inputs</th>
+                        <th class="tg-baqh" colspan="8" rowspan="2">Logic Gates</th>
+                    </tr>
+                    <tr>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="tg-baqh">X</td>
+                        <td class="tg-baqh">Y</td>
+                        <td class="tg-0lax" rowspan="5"></td>
+                        <td class="tg-baqh">OR</td>
+                        <td class="tg-baqh">NOR</td>
+                        <td class="tg-baqh">AND</td>
+                        <td class="tg-baqh">NAND</td>
+                        <td class="tg-baqh">XOR</td>
+                        <td class="tg-baqh">XNOR</td>
+                        <td class="tg-baqh">BUFF*</td>
+                        <td class="tg-baqh">NOT</td>
+                    </tr>
+                    <tr>
+                        <td class="tg-c3ow">0</td>
+                        <td class="tg-c3ow">0</td>
+                        <td class="tg-c3ow">0</td>
+                        <td class="tg-c3ow">1</td>
+                        <td class="tg-c3ow">0</td>
+                        <td class="tg-c3ow">1</td>
+                        <td class="tg-c3ow">0</td>
+                        <td class="tg-c3ow">1</td>
+                        <td class="tg-baqh">0</td>
+                        <td class="tg-baqh">1</td>
+                    </tr>
+                    <tr>
+                        <td class="tg-c3ow">0</td>
+                        <td class="tg-c3ow">1</td>
+                        <td class="tg-c3ow">1</td>
+                        <td class="tg-c3ow">0</td>
+                        <td class="tg-c3ow">0</td>
+                        <td class="tg-c3ow">1</td>
+                        <td class="tg-c3ow">1</td>
+                        <td class="tg-c3ow">0</td>
+                        <td class="tg-baqh">0</td>
+                        <td class="tg-baqh">1</td>
+                    </tr>
+                    <tr>
+                        <td class="tg-c3ow">1</td>
+                        <td class="tg-c3ow">0</td>
+                        <td class="tg-c3ow">1</td>
+                        <td class="tg-c3ow">0</td>
+                        <td class="tg-c3ow">0</td>
+                        <td class="tg-c3ow">1</td>
+                        <td class="tg-c3ow">1</td>
+                        <td class="tg-c3ow">0</td>
+                        <td class="tg-baqh">1</td>
+                        <td class="tg-baqh">0</td>
+                    </tr>
+                    <tr>
+                        <td class="tg-baqh">1</td>
+                        <td class="tg-baqh">1</td>
+                        <td class="tg-baqh">1</td>
+                        <td class="tg-baqh">0</td>
+                        <td class="tg-baqh">1</td>
+                        <td class="tg-baqh">0</td>
+                        <td class="tg-baqh">0</td>
+                        <td class="tg-baqh">1</td>
+                        <td class="tg-baqh">1</td>
+                        <td class="tg-baqh">0</td>
+                    </tr>
+                </tbody>
+            </table>
 
-    <p>Depending on the K-map, there may be several different ways
-        to form groups. One such way is:</p>
+        </center>
 
-    <center>
-        <table>
-            <thead>
-                <tr>
-                    <th>xy \ zw</th>
-                    <th>00</th>
-                    <th>01</th>
-                    <th>11</th>
-                    <th>10</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td style=background-color:yellow;color:black;>00</td>
-                    <td>1<sup>(4)</sup></td>
-                    <td>0<br></td>
-                    <td>0<br></td>
-                    <td>1<sup>(3)</sup><sup>(4)</sup><br></td>
-                </tr>
-                <tr>
-                    <td style=background-color:yellow;color:black;>01</td>
-                    <td>0<br></td>
-                    <td>1<sup>(2)</sup></td>
-                    <td>0</td>
-                    <td>1<sup>(3)</sup></td>
-                </tr>
-                <tr>
-                    <td style=background-color:yellow;color:black;>11</td>
-                    <td>1<sup>(1)</sup></td>
-                    <td>1<sup>(1)</sup><sup>(2)</sup></td>
-                    <td>0</td>
-                    <td>0</td>
-                </tr>
-                <tr>
-                    <td style=background-color:yellow;color:black;>10</td>
-                    <td>1<sup>(1)</sup></td>
-                    <td>1<sup>(1)</sup></td>
-                    <td>0</td>
-                    <td>0</td>
-                </tr>
-            </tbody>
-        </table>
-    </center>
-    <p>Where the prime implicants are then: xz' (group 1), yz'w (group 2), x'zw' (group 3), and x'y'w' (group 4).
-        Thus the minimal expression is just the sum of these terms.
+        <p>*From the logical point of view, a buffer is no different from a wire, so
+            it might seem useless. However, from the analog point of view, the buffer
+            might have desirable characteristics such as the ability to deliver large
+            amounts of current to a motor or the ability to quickly send its output
+            to many gates. This is an example of why we need to consider multiple
+            levels of abstraction to fully understand a system; the digital abstraction
+            hides the real purpose of a buffer.</p>
 
-    </p>
-    <!---->
-    <p><a href="#top">Back to top</a></p>
-    <!---->
-    <h2 id="ss2_5">2.5 Combinational circuits </h2>
-    <p>To do: add multiplexors and decoders.</p>
+        <h2 id="ss2_2_3">2.2.3 Combinational Circuits - Multiplexors, Demultiplexers, and Decoders</h2>
+        <p>From logic circuits, one can make more elaborate circuits - so called <b>combinational circuits</b>.</p>
+        <!---->
+        <p><a href="#top">Back to top</a></p>
+        <!---->
+    </div>
 
-    <!---->
-    <p><a href="#top">Back to top</a></p>
-    <!---->
+    <div><!--2.3 Sum of Products and Product of Sums--->
+       
+        <h2 id="ss2_3">2.3 Sum of Products and Product of Sums</h2>
+
+        <p>Boolean variables and their complements are sometimes refered to as
+            <b>literals</b>. The AND of one or more literals is called a
+            <b>product</b> or <b>implicant</b>. A <b>minterm</b> is a
+            product involving <i>all</i> implicants for the function (i.e.,
+            if the function is in N-inputs, an implicant will consist
+            of N literals). Similarly, the OR of literals is often called
+            a <b>sum</b> and a <b>maxterm</b> is a sum involving <i>all</i>
+            implicants for the function.
+        </p>
+
+        <p>
+            The SOP form can be a succinct way of describing a circuit via
+            Boolean expressions. To form the SOP from a truth table,
+            simply AND the variables together that yield true output and OR all these expressions together.<br>
+            The dual notion of SOP is POS. To form the POS, simply OR the opposite of the variables together
+            that yield false output and AND all these expressions together.<br>
+            Using a truth table, one can easily convert between the two forms.
+
+        </p>
+
+        <h3><b><i>Example: </i></b> Find the SOP and POS forms
+            from the truth table below. Describe the max and min terms.</h3>
+
+        <center>
+            <table>
+                <thead>
+                    <tr>
+                        <th>a</th>
+                        <th>b</th>
+                        <th>c</th>
+                        <th>F</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0</td>
+                    </tr>
+                    <tr>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>1</td>
+                        <td>1</td>
+                    </tr>
+                    <tr>
+                        <td>0<br></td>
+                        <td>1</td>
+                        <td>0</td>
+                        <td>0</td>
+                    </tr>
+                    <tr>
+                        <td>0</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>0</td>
+                    </tr>
+                    <tr>
+                        <td>1</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>1</td>
+                    </tr>
+                    <tr>
+                        <td>1</td>
+                        <td>0</td>
+                        <td>1</td>
+                        <td>1</td>
+                    </tr>
+                    <tr>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>0</td>
+                        <td>0</td>
+                    </tr>
+                    <tr>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>0</td>
+                    </tr>
+                </tbody>
+            </table>
+        </center>
+
+        <p> Looking at the rows
+            that output 1, we can describe the SOP form as:<br>
+            ( ~a & ~b & c ) | ( a & ~b & ~c ) | ( a & ~b & c )
+            <br>
+            Looking at the rows that output 0, we can describe the POS
+            form as: <br>
+            ( a | b | c ) & ( a | ~b | c ) & ( a | ~b | ~c ) & ( ~a | ~b | c ) & ( ~a | ~b | ~c )<br>
+            The minterms can be described as Sum(1,4,5) and the maxterms can be
+            described as Prod(0,2,3,6,7).
+        </p>
+
+        <h3><b><i>Note: </i></b> Though SOP/POS is succinct, is usually
+            does not provide a minimal expression.</h3>
+        <p>An implicant is called <b>prime</b> if it cannot be combined with
+            any other implicants in the equation to form a new implicant with
+            fewer literals. The implicants in a minimal equation <i>must</i>
+            all be prime implicants. </p>
+
+        <h3><b><i>Example: </i></b> Minimize a'b'c' + ab'c' + ab'c. </h3>
+        <p>Using Boolean algebra we can write:<br>
+            a'b'c' + ab'c' + ab'c </br>
+            = a'b'c' + ab'c' <b>+ ab'c'</b> + ab'c (<i>idempotency</i>)<br>
+            = <b>b'c'</b> ( a + a ) + <b>ab'</b> ( c' + c ) (<i>distributivity</i>)</br>
+            = ( b'c' & <b>1</b> ) + ( ab' & <b>1</b> ) (<i>complements</i>)<br>
+            = b'c' + ab' (<i>identity</i>)<br>
+
+            It may seem uninituitive to use idempotency, but doing this naively
+            might yield an expression like a'b'c'+ac', which is not as minimal as
+            it could be. K-maps help to make this process more formal.
+        </p>
+        <!---->
+        <p><a href="#top">Back to top</a></p>
+        <!---->
+    </div>
+
+    <div><!--2.4 Karnaugh Maps-->
+
+        <h2 id="ss2_4">2.4 Karnaugh Maps</h2>
+
+        <p><b>Karnaugh maps</b> or <b>K-maps</b> are a graphical grid method
+            for simplifying Boolean equations. When drawing a K-map, note that
+            adjacent cells differ by only a single change in digit.</p>
+
+        <h3><b><i>Example: </i></b> Minimize a'b'c' + ab'c' + ab'c with a K-map. </h3>
+
+        <p>We can draw a K-map for this expression as such:</p>
+
+        <center>
+            <table>
+                <thead>
+                    <tr>
+                        <th>a \ bc<br></th>
+                        <th>00</th>
+                        <th>01</th>
+                        <th>11</th>
+                        <th>10</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td style=background-color:yellow;color:black;>0</td>
+                        <td>1</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0</td>
+                    </tr>
+                    <tr>
+                        <td style=background-color:yellow;color:black;>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>0</td>
+                        <td>0</td>
+                    </tr>
+                </tbody>
+            </table>
+
+        </center>
+
+        <p>The 1's in the grid represent the minterms described in the given equation. We
+            then group the 1's together in groups of no more than powers of 2.
+            Notice, in the K-map above we can make two such groups: the group at coordinates
+            (0,00),(1,00) and the group (1,00),(1,01). For now, let the groups
+            be represented via super scripts:
+
+        </p>
+
+        <center>
+            <table>
+                <thead>
+                    <tr>
+                        <th>a \ bc<br></th>
+                        <th>00</th>
+                        <th>01</th>
+                        <th>11</th>
+                        <th>10</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td style=background-color:yellow;color:black;>0</td>
+                        <td>1<sup>(1)</sup></td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0</td>
+                    </tr>
+                    <tr>
+                        <td style=background-color:yellow;color:black;>1</td>
+                        <td>1<sup>(1)</sup><sup>(2)</sup></td>
+                        <td>1<sup>(2)</sup></td>
+                        <td>0</td>
+                        <td>0</td>
+                    </tr>
+                </tbody>
+            </table>
+
+        </center>
+        <p>We can analyize this now to see that in the (1) group, the 'a' variable
+            is invariant to the behaviour of the logic. Hence, we extract the prime
+            implicant: b'c'. Likewise in the (2) group we see that 'c' is invariant and Hence
+            we extract the prime implicant ab'. So we arrive at our minimial equation: b'c'+ab'. </p>
+
+        <h3><b><i>Example: </i></b> Provide the prime implicants for the following truth table: </h3>
+        <center>
+            <table>
+                <thead>
+                    <tr>
+                        <th>x</th>
+                        <th>y</th>
+                        <th>z</th>
+                        <th>F</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0</td>
+                    </tr>
+                    <tr>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>1</td>
+                        <td>1</td>
+                    </tr>
+                    <tr>
+                        <td>0</td>
+                        <td>1</td>
+                        <td>0</td>
+                        <td>1</td>
+                    </tr>
+                    <tr>
+                        <td>0</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                    </tr>
+                    <tr>
+                        <td>1</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>1</td>
+                    </tr>
+                    <tr>
+                        <td>1</td>
+                        <td>0</td>
+                        <td>1</td>
+                        <td>0</td>
+                    </tr>
+                    <tr>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>0</td>
+                        <td>1</td>
+                    </tr>
+                    <tr>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>0<br></td>
+                    </tr>
+                </tbody>
+            </table>
+        </center>
+        <p>We can draw the following K-map for this truth table by plotting the minterms 1,2,3,4, and 6</p>:
+
+        <center>
+            <table>
+                <thead>
+                    <tr>
+                        <th>x \ yz</th>
+                        <th>00</th>
+                        <th>01</th>
+                        <th>11</th>
+                        <th>10</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td style=background-color:yellow;color:black;>0</td>
+                        <td>0</td>
+                        <td>1<sup>(1)</sup></td>
+                        <td>1<sup>(1)</sup><sup>(2)</sup></td>
+                        <td>1<sup>(2)</sup><sup>(3)</sup></td>
+                    </tr>
+                    <tr>
+                        <td style=background-color:yellow;color:black;>1</td>
+                        <td>1<sup>(4)</sup></td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>1<sup>(3)</sup><sup>(4)</sup></td>
+                    </tr>
+                </tbody>
+            </table>
+
+
+        </center>
+
+        <p>Note the (4) group how it wraps around. Looking at the groups, we can write a minimal expression as:
+            x'z + x'y + yz' + xz' . The prime implicants of this table therefore are
+            x'z , x'y , yz' , and xz'.</p>
+
+        <h3><b><i>Example: </i></b> Write the minimal expression from the following K-table. </h3>
+
+        <center>
+            <table>
+                <thead>
+                    <tr>
+                        <th>xy \ zw</th>
+                        <th>00</th>
+                        <th>01</th>
+                        <th>11</th>
+                        <th>10</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td style=background-color:yellow;color:black;>00</td>
+                        <td>1</td>
+                        <td>0<br></td>
+                        <td>0<br></td>
+                        <td>1<br></td>
+                    </tr>
+                    <tr>
+                        <td style=background-color:yellow;color:black;>01</td>
+                        <td>0<br></td>
+                        <td>1</td>
+                        <td>0</td>
+                        <td>1</td>
+                    </tr>
+                    <tr>
+                        <td style=background-color:yellow;color:black;>11</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>0</td>
+                        <td>0</td>
+                    </tr>
+                    <tr>
+                        <td style=background-color:yellow;color:black;>10</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>0</td>
+                        <td>0</td>
+                    </tr>
+                </tbody>
+            </table>
+        </center>
+
+        <p>Depending on the K-map, there may be several different ways
+            to form groups. One such way is:</p>
+
+        <center>
+            <table>
+                <thead>
+                    <tr>
+                        <th>xy \ zw</th>
+                        <th>00</th>
+                        <th>01</th>
+                        <th>11</th>
+                        <th>10</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td style=background-color:yellow;color:black;>00</td>
+                        <td>1<sup>(4)</sup></td>
+                        <td>0<br></td>
+                        <td>0<br></td>
+                        <td>1<sup>(3)</sup><sup>(4)</sup><br></td>
+                    </tr>
+                    <tr>
+                        <td style=background-color:yellow;color:black;>01</td>
+                        <td>0<br></td>
+                        <td>1<sup>(2)</sup></td>
+                        <td>0</td>
+                        <td>1<sup>(3)</sup></td>
+                    </tr>
+                    <tr>
+                        <td style=background-color:yellow;color:black;>11</td>
+                        <td>1<sup>(1)</sup></td>
+                        <td>1<sup>(1)</sup><sup>(2)</sup></td>
+                        <td>0</td>
+                        <td>0</td>
+                    </tr>
+                    <tr>
+                        <td style=background-color:yellow;color:black;>10</td>
+                        <td>1<sup>(1)</sup></td>
+                        <td>1<sup>(1)</sup></td>
+                        <td>0</td>
+                        <td>0</td>
+                    </tr>
+                </tbody>
+            </table>
+        </center>
+        <p>Where the prime implicants are then: xz' (group 1), yz'w (group 2), x'zw' (group 3), and x'y'w' (group 4).
+            Thus the minimal expression is just the sum of these terms.
+
+        </p>
+        <!---->
+        <p><a href="#top">Back to top</a></p>
+        <!---->
+    </div>
+
+    <div><!--2.5 Combinational circuits-->
+
+        <h2 id="ss2_5">2.5 Combinational circuits </h2>
+        <p>By using groups of logic gates we can build circuits that have a higher degree of complexity and abstract the details away in order to build even more complex systems.</p>
+
+
+        <h2 id="ss2_5_1">2.5.1 The Multiplexer</h2>
+
+        <!---->
+        <p><a href="#top">Back to top</a></p>
+        <!---->
+    </div>
+
+    <div><!--2.6 Sequential Logic Design-->
+
+
+        <h2 id="ss2_6">2.6 Sequential Logic Design </h2>
+        <p>In this section, we answer the question: how to store memory in circuits? Sequentially designed circuits are the answer. Contrasted with combintional circuits, where the output depends only on the present input, the sequential circuit's output depends not only on the present input but also on the history of the input. </p>
+        <div><!--2.6.1 The SR-Latch-->
+
+            <h2 id="ss2_6_1">2.6.1 The SR-Latch</h2>
+
+            <center>
+                <img src="../../resources/images/transparencies/SR_Latch.png" width="650" height="400"
+                    alt=SR_Latch.png">
+                <img src="../../resources/images/transparencies/SR_Latch_Sym.png" width="650" height="400"
+                    alt=SR_Latch_Sym.png">
+            </center>
+            <p>One of the simplest sequential circuits is the SR latch, which is composed of two cross-coupled NOR
+                gates.
+                The latch has two inputs, S and R, and two outputs, Q and Q:The 'S' stands for <b>set</b> and the 'R'
+                stands for <b>reset</b>.It has the truth table:</p>
+            <center>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Case</th>
+                            <th>S</th>
+                            <th>R</th>
+                            <th>Q</th>
+                            <th>~Q</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>IV</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>Q_prev</td>
+                            <td>~Q_prev<br></td>
+                        </tr>
+                        <tr>
+                            <td>I</td>
+                            <td>0</td>
+                            <td>1</td>
+                            <td>0</td>
+                            <td>1</td>
+                        </tr>
+                        <tr>
+                            <td>II</td>
+                            <td>1</td>
+                            <td>0</td>
+                            <td>1</td>
+                            <td>0</td>
+                        </tr>
+                        <tr>
+                            <td>III</td>
+                            <td>1</td>
+                            <td>1</td>
+                            <td>0</td>
+                            <td>0</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </center>
+            <p>The SR latch is a <b>bistable element</b>
+                with one bit of state stored in Q. However, the state can be controlled
+                through the S and R inputs. When R is asserted, the state is reset to 0.
+                When S is asserted, the state is set to 1. When neither is asserted, the state
+                retains its old value.Notice that the entire history of inputs can be accounted for by the single state
+                variable Q. No matter what pattern of
+                setting and resetting occurred in the past, all that is needed to predict
+                the future behavior of the SR latch is whether it was most recently set
+                or reset. </p>
+
+        </div>
+
+        <div><!--2.6.2 The D-Latch-->
+
+            <h2 id="ss2_6_2">2.6.2 The D-Latch</h2>
+
+            <center>
+                <img src="../../resources/images/transparencies/D_Latch.png" width="750" height="400" alt=D_Latch.png">
+                <img src="../../resources/images/transparencies/D_Latch_Sym.png" width="450" height="400"
+                    alt=D_Latch_Sym.png">
+            </center>
+            <p>The D-Latch remedies the problem of the awkward situation the SR-latch had where both S and R are
+                simultaneously asserted. In the SR-latch, the questions of <i>what</i> should be set and <i>when</i> it
+                should be changed are conflated. The D-latch seperates these two questions via the <b>data</b> input D
+                which controls the next state and the <b>clock</b> input CLK which controls when the state should
+                change. It has truth table:</p>
+
+            <center>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>CLK</th>
+                            <th>D</th>
+                            <th></th>
+                            <th>~D</th>
+                            <th>S</th>
+                            <th>R</th>
+                            <th></th>
+                            <th>Q</th>
+                            <th>~Q</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>0</td>
+                            <td>X</td>
+                            <td rowspan="3"></td>
+                            <td>~X</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td rowspan="3"></td>
+                            <td>Q_prev</td>
+                            <td>~Q_prev</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>0</td>
+                            <td>1</td>
+                            <td>0</td>
+                            <td>1</td>
+                            <td>0</td>
+                            <td>1</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>1</td>
+                            <td>0</td>
+                            <td>1</td>
+                            <td>0</td>
+                            <td>1</td>
+                            <td>0</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </center>
+
+            <p>The clock controls when data
+                flows through the latch. When CLK = 1, the latch is <b>transparent</b>. The
+                data at D flows through to Q as if the latch were just a buffer. When
+                CLK = 0, the latch is <b>opaque</b>. It blocks the new data from flowing
+                through to Q, and Q retains the old value. Hence, the D latch is some-
+                times called a <b>transparent latch</b> or a <b>level-sensitive latch.</b> <br>
+                The D latch updates its state continuously while CLK = 1. </p>
+
+        </div>
+
+
+        <div><!--2.6.2 The D Flip-Flop--2.6.3.1 The Enabled Flip-Flop--2.6.3.2 The Resettable Flip-Flop-->
+
+            <h2 id="ss2_6_3">2.6.3 The D Flip-Flop</h2>
+
+            <center>
+                <img src="../../resources/images/transparencies/DFF.png" width="650" height="400" alt=DFF.png">
+                <img src="../../resources/images/transparencies/DFF_Sym.png" width="650" height="400" alt=DFF_Sym.png">
+            </center>
+            <p>When CLK = 0, the master latch is transparent and the slave is opaque. Therefore, whatever value was at D
+                propagates through to N1.
+                When CLK = 1, the master goes opaque and the slave becomes transpar-
+                ent. The value at N1 propagates through to Q, but N1 is cut off from D.
+                Hence, whatever value was at D immediately before the clock rises from 0
+                to 1 gets copied to Q immediately after the clock rises. At all other times,
+                Q retains its old value, because there is always an opaque latch blocking the path between D and Q.<br>
+
+                In other words, <b><u>a D flip-flop copies D to Q on the rising edge of the clock, and remembers its
+                        state at all other times. </u></b> <br>
+                A D flip-flop is also known as a <b>master-slave flip-flop</b>, an <b>edge-triggered flip-flop</b>, or a
+                <b>positive edge-triggered flip-flop</b>. The triangle in the symbols
+                denotes an edge-triggered clock input. The ~Q output is often omitted when
+                it is not needed. <br><br>
+
+                An <b>N-bit register</b> (pictured below) is a bank of N flip-flops that share a common CLK input, so
+                that all bits of the register are updated at the same time.
+
+                <center>
+                    <img src="../../resources/images/transparencies/reg.png" width="350" height="600" alt=reg.png">
+                    <img src="../../resources/images/transparencies/reg_Sym.png" width="360" height="300"
+                        alt=reg_Sym.png">
+                </center>
+            </p>
+
+
+            <div><!--2.6.3.1 The Enabled Flip-Flop-->
+
+                <h2 id="ss2_6_3_1">2.6.3.1 The Enabled Flip-Flop</h2>
+                <p>An enabled flip-flop adds another input called EN or <b>enable</b> to determine whether data is
+                    loaded on the clock edge. When EN is TRUE, the
+                    enabled flip-flop behaves like an ordinary D flip-flop. When EN is
+                    FALSE, the enabled flip-flop ignores the clock and retains its state.
+                    <br>
+                    Enabled flip-flops are useful when we wish to load a new value into a
+                    flip-flop only some of the time, rather than on every clock edge.
+                </p>
+                <center>
+                    <img src="../../resources/images/transparencies/EFF.png" width="650" height="400" alt=EFF.png">
+                    <img src="../../resources/images/transparencies/EFF_Sym.png" width="400" height="320"
+                        alt=EFF_Sym.png">
+                </center>
+            </div>
+
+            <div><!--2.6.3.2 The Resettable Flip-Flop -->
+
+                <h2 id="ss2_6_3_2">2.6.3.2 The Resettable Flip-Flop</h2>
+
+                <p>
+                    A resettable flip-flop adds another input called RESET. When RESET is
+                    FALSE, the resettable flip-flop behaves like an ordinary D flip-flop.
+                    When RESET is TRUE, the resettable flip-flop ignores D and resets
+                    the output to 0.
+                    <br>
+                    Resettable flip-flops are useful when we want to force
+                    a known state (i.e., 0) into all the flip-flops in a system when we first turn it on.
+                    <br><br>
+                    Such flip-flops may be <i>synchronously</i> or <i>asynchronously</i> resettable.
+                    Synchronously resettable flip-flops reset themselves only on the rising
+                    edge of CLK. Asynchronously resettable flip-flops reset themselves as
+                    soon as RESET becomes TRUE, independent of CLK. Asynchronously resettable flip-flops require
+                    modifying the internal
+                    structure of the flip-flop.
+                    <br>
+                    <b>Settable flip-flops</b> are also occasionally used.
+                    They load a 1 into the flip-flop when SET is asserted, and they too come
+                    in synchronous and asynchronous flavors. Resettable and settable flip-
+                    flops may also have an enable input and may be grouped into N-bit
+                    registers.
+
+                </p>
+                <center>
+                    <img src="../../resources/images/transparencies/RFF.png" width="650" height="400" alt=RFF.png">
+                    <img src="../../resources/images/transparencies/RFF_Sym.png" width="400" height="320"
+                        alt=RFF_Sym.png">
+                </center>
+            </div>
+
+
+            <!---->
+            <p><a href="#top">Back to top</a></p>
+            <!---->
+
+        </div>
+    </div>
+
+
+    <div><!--2.7 Synchronous Logic Design-->
+
+        <h2 id="ss2_7">2.7 Synchronous Logic Design </h2>
+
+
+        <!---->
+        <p><a href="#top">Back to top</a></p>
+        <!---->
+    </div>   
 
 </body>
+
 </html>
