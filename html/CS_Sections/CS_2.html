@@ -51,7 +51,13 @@
             <ul>
                 <li><a href="#ss2_2_1">2.2.1 Transistors</a></li>
                 <li><a href="#ss2_2_2">2.2.2 Logic Gates</a></li>
-                <li><a href="#ss2_2_3">2.2.3 Combinational Circuits - Multiplexors, Demultiplexers, and Decoders</a>
+                <li><a href="#ss2_2_3">2.2.3 Combinational Circuits</a>
+                <ul>
+                    <li><a href="#ss2_2_3_1">2.2.3.1 Encoder</a></li>
+                    <li><a href="#ss2_2_3_1">2.2.3.1 Decoder</a></li>
+                    <li><a href="#ss2_2_3_1">2.2.3.1 Multiplexer</a></li>
+                    <li><a href="#ss2_2_3_1">2.2.3.1 Demultiplexer</a></li>
+                </ul>
                 </li>
                 </li>
             </ul>
@@ -60,12 +66,12 @@
             <li><a href="#ss2_5">2.5 Combinational circuits </a></li>
             <li><a href="#ss2_6">2.6 Sequential Logic Design </a></li>
             <ul>
-                <li><a href="#ss2_6_1">2.6.1 The SR-Latch </a></li>
-                <li><a href="#ss2_6_2">2.6.2 The D-Latch </a></li>
-                <li><a href="#ss2_6_3">2.6.3 The D Flip-Flop </a></li>
+                <li><a href="#ss2_6_1">2.6.1 SR-Latch </a></li>
+                <li><a href="#ss2_6_2">2.6.2 D-Latch </a></li>
+                <li><a href="#ss2_6_3">2.6.3 D Flip-Flop </a></li>
                 <ul>
-                    <li><a href="#ss2_6_3_1">2.6.3.1 The Enabled Flip-Flop </a></li>
-                    <li><a href="#ss2_6_3_2">2.6.3.2 The Resettable Flip-Flop </a></li>
+                    <li><a href="#ss2_6_3_1">2.6.3.1 Enabled Flip-Flop </a></li>
+                    <li><a href="#ss2_6_3_2">2.6.3.2 Resettable Flip-Flop </a></li>
                 </ul>
             </ul>
             <li><a href="#ss2_7">2.7 Synchronous Logic Design</a></li>
@@ -699,9 +705,165 @@
         <h2 id="ss2_5">2.5 Combinational circuits </h2>
         <p>By using groups of logic gates we can build circuits that have a higher degree of complexity and abstract the details away in order to build even more complex systems.</p>
 
+        <h2 id="ss2_2_3_1">2.2.3.1 Multiplexer</h2>
 
-        <h2 id="ss2_5_1">2.5.1 The Multiplexer</h2>
+        <p>Multiplexers are among the most commonly used combinational circuits.
+            They choose an output from among several possible inputs based on the value
+            of a select signal. A multiplexer is sometimes affectionately called a mux.<br>
+        In a multiplexer circuit, there will be <b>n</b> selection lines, <b>2^n</b> data inputs, and a <b>single</b> output line.
+        </p>
 
+        <p>The simpliest mux is the 2:1 mux;
+        the logic implementation and symbol are as follows:</p>
+        <center>
+            <img src="../../resources/images/transparencies/2t1MUX.png" width="600" height="500" alt=2t1MUX.png">
+            <img src="../../resources/images/transparencies/2t1MUX_Sym.png" width="450" height="350" alt=2t1MUX_Sym.png">
+        </center>
+        <p>With truth table:</p>
+        <center>
+            <table>
+                <thead>
+                  <tr>
+                    <th>S</th>
+                    <th>D1</th>
+                    <th>D2</th>
+                    <th>Y</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                  </tr>
+                  <tr>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>1</td>
+                    <td>1</td>
+                  </tr>
+                  <tr>
+                    <td>0</td>
+                    <td>1</td>
+                    <td>0</td>
+                    <td>0</td>
+                  </tr>
+                  <tr>
+                    <td>0</td>
+                    <td>1</td>
+                    <td>1</td>
+                    <td>1</td>
+                  </tr>
+                  <tr>
+                    <td>1</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                  </tr>
+                  <tr>
+                    <td>1</td>
+                    <td>0</td>
+                    <td>1</td>
+                    <td>0</td>
+                  </tr>
+                  <tr>
+                    <td>1</td>
+                    <td>1</td>
+                    <td>0</td>
+                    <td>1</td>
+                  </tr>
+                  <tr>
+                    <td>1</td>
+                    <td>1</td>
+                    <td>1</td>
+                    <td>1</td>
+                  </tr>
+                </tbody>
+                </table>
+
+
+        </center>
+        <p>So when the data selection line is ON, D1 input is recieved at Y; when the data selection line is OFF, D2 input is recieved at Y.</p><br>
+        <p>This can be scaled quite easily. Observe the 4:1 mux:</p>
+
+        <center>
+            <img src="../../resources/images/transparencies/4t1MUX.png" width="500" height="400" alt=4t1MUX.png">
+            <img src="../../resources/images/transparencies/4t1MUX_simp.png" width="450" height="350" alt=4t1MUX_simp.png">            
+        </center>
+        <p>and the 8:1 mux:</p>
+        <center>
+            <img src="../../resources/images/transparencies/8t1MUX_Sym.png" width="500" height="400" alt=8t1MUX_Sym.png">           
+        </center>
+        <p>etc.</p>
+
+        <h2 id="ss2_2_3_2">2.2.3.2 Decoder</h2>
+        <p>A decoder has <b>N</b> inputs and <b>2^N</b> outputs. It asserts exactly one of its outputs depending on the input combination (i.e., it decodes a code, hence the name).  The outputs of the decoder are nothing but the min terms of n input variables when it is enabled. The outputs are called <b>one-hot</b>, because exactly one is “hot” (HIGH) at a given time.  </p><br>
+        <p>A 2:4 decoder would have the following logical implementation and symbol:</p>
+        <center>
+            <img src="../../resources/images/transparencies/2t4DEC.png" width="500" height="400" alt=2t4DEC.png">
+            <img src="../../resources/images/transparencies/2t4DEC_Sym.png" width="450" height="350" alt=2t4DEC_Sym.png">  
+
+        </center>
+        <p>With truth table:</p>
+        <center>
+            <table>
+                <thead>
+                  <tr>
+                    <th>A1</th>
+                    <th>A0</th>
+                    <th></th>
+                    <th>Y3</th>
+                    <th>Y2</th>
+                    <th>Y1</th>
+                    <th>Y0</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>0</td>
+                    <td>0</td>
+                    <td rowspan="4"></td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>1</td>
+                  </tr>
+                  <tr>
+                    <td>0</td>
+                    <td>1</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>1</td>
+                    <td>0</td>
+                  </tr>
+                  <tr>
+                    <td>1</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>1</td>
+                    <td>0</td>
+                    <td>0</td>
+                  </tr>
+                  <tr>
+                    <td>1</td>
+                    <td>1</td>
+                    <td>1</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                  </tr>
+                </tbody>
+                </table>
+        </center>
+        <p>We can implement logical functions using a decoder. For instance, the XNOR function can be implemented:</p>
+        <center>
+            <img src="../../resources/images/transparencies/decoder_XNOR.png" width="500" height="400" alt="decoder_XNOR.png">           
+        </center>
+        <h2 id="ss2_2_3_3">2.2.3.3 Demultiplexer</h2>
+        <p>Reverse operation of a multiplexer; <b>single</b> input, <b>n</b> selection lines, <b>2^n</b> outputs. </p>
+        <h2 id="ss2_2_3_4">2.2.3.4 Encoder</h2>
+        <p>Reverse operation of a decoder; <b>2^N</b> input lines, <b>N</b> output lines.</p>
         <!---->
         <p><a href="#top">Back to top</a></p>
         <!---->
